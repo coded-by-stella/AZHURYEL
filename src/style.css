@@ -157,6 +157,7 @@ p{
   font-weight:700;
   font-size:clamp(2.2rem,5vw,3.4rem);
   margin-bottom:var(--space-md);
+  white-space:nowrap;
 }
 .hero-subtitle{
   font-family:var(--font-serif);
