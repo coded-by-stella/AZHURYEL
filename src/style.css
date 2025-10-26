@@ -1016,6 +1016,35 @@ a {
   color: #fff;
 }
 
+/* Testimonial text uniform style */
+.testimonial-text {
+  font-family: var(--font-sans);
+  font-size: 0.96rem;
+  line-height: 1.7;
+  color: var(--dark-gray);
+  font-style: italic;
+  text-align: left;
+  margin-top: var(--space-sm);
+  margin-bottom: var(--space-sm);
+  padding-top: 0.4rem;
+  border-top: 1px solid rgba(15, 26, 43, 0.08);
+  opacity: 0.95;
+}
+.testimonial-text::before {
+  content: "“";
+  font-size: 1.4rem;
+  color: var(--gold-dark);
+  vertical-align: top;
+  margin-right: 2px;
+}
+.testimonial-text::after {
+  content: "”";
+  font-size: 1.4rem;
+  color: var(--gold-dark);
+  vertical-align: bottom;
+  margin-left: 2px;
+}
+
 /* Button layout stability inside service blocks */
 .service-block {
   display: flex;
