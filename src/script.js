@@ -77,15 +77,17 @@ function showSlide(index) {
 
 updateDots();
 
-/* Mobile menu toggle */
-const hamburger = document.querySelector(".hamburger");
-const navLinks = document.querySelector(".nav-links");
+// Hamburger Menu Toggle
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".nav-links");
 
-if (hamburger && navLinks) {
-  hamburger.addEventListener("click", () => {
-    const open = navLinks.classList.toggle("active");
-    hamburger.setAttribute("aria-expanded", String(open));
-  });
-}
+  if (hamburger && navLinks) {
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  }
+});
+
 
 
