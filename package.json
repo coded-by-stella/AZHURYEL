@@ -1,0 +1,21 @@
+{
+  "name": "azhuryel",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "new:post": "node scripts/new-post.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coded-by-stella/AZHURYEL.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coded-by-stella/AZHURYEL/issues"
+  },
+  "homepage": "https://github.com/coded-by-stella/AZHURYEL#readme",
+  "description": ""
+}
