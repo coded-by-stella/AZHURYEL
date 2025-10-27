@@ -762,14 +762,16 @@ p {
 @media (max-width: 900px) {
   .nav-links {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 64px;
     left: 0;
     right: 0;
     background: var(--glass);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-top: 1px solid rgba(0, 0, 0, 0.08);
     text-align: center;
+    z-index: 1200;
   }
   .nav-links ul {
     flex-direction: column;
@@ -779,12 +781,16 @@ p {
   .nav-links.active {
     display: flex;
     justify-content: center;
+    pointer-events: auto;
+  }
+  
+  .hamburger {
+    display: flex;
+    position: relative;
+    z-index: 1300;
   }
   .cta-btn {
     display: none;
-  }
-  .hamburger {
-    display: flex;
   }
 }
 
