@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- === REQUIRED SEO === -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{{TITLE}} | AZHURYEL Blog</title>
+    <meta name="description" content="{{DESCRIPTION}}" />
+    <link rel="canonical" href="https://azhuryel.com/{{SLUG}}" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{{TITLE}} | AZHURYEL Blog" />
+    <meta property="og:description" content="{{DESCRIPTION}}" />
+    <meta property="og:url" content="https://azhuryel.com/{{SLUG}}" />
+    <meta property="og:image" content="https://azhuryel.com/{{COVER_PATH}}" />
+    <meta property="og:site_name" content="AZHURYEL" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{TITLE}} | AZHURYEL Blog" />
+    <meta name="twitter:description" content="{{DESCRIPTION}}" />
+    <meta name="twitter:image" content="https://azhuryel.com/{{COVER_PATH}}" />
+
+    <!-- Fonts + Main CSS -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="assets/images/icons/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- Page helpers -->
+    <style>
+      .post-hero {
+        background: var(--off-white);
+        padding: var(--space-xl) 0 var(--space-lg);
+      }
+      .breadcrumb {
+        font-size: 0.95rem;
+        color: var(--dark-gray);
+        margin-bottom: var(--space-md);
+      }
+      .breadcrumb a {
+        color: var(--violet);
+        text-decoration: none;
+      }
+      .post-cover {
+        border-radius: var(--radius-xl);
+        overflow: hidden;
+        border: 1px solid var(--soft-gold-line);
+      }
+      .post-meta {
+        margin: var(--space-md) 0 var(--space-lg);
+        color: var(--dark-gray);
+        font-size: 0.95rem;
+      }
+      .post-title {
+        font-family: var(--font-display);
+        color: var(--night-blue);
+        margin-bottom: var(--space-sm);
+      }
+      .article-content {
+        text-align: left;
+        max-width: 780px;
+        margin: 0 auto;
+      }
+      .article-content h2,
+      .article-content h3 {
+        color: var(--night-blue);
+        margin-top: var(--space-lg);
+      }
+      .article-content p {
+        color: var(--night-blue);
+        margin-bottom: 1rem;
+      }
+      .article-content ul {
+        margin: 0.5rem 0 1rem 1.25rem;
+      }
+      .reading-time {
+        font-weight: 500;
+        color: var(--violet-dark);
+      }
+      .recommended {
+        margin-top: var(--space-xl);
+      }
+      .post-footer-cta {
+        text-align: center;
+        margin-top: var(--space-xl);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navigation (Blog active) -->
+    <header class="navbar">
+      <div class="spacer" aria-hidden="true"></div>
+      <nav class="nav-links" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="azhuryel academy.html">Azhuryel Academy</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="blog.html" class="active">Blog</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="index.html#freebie" class="cta-btn">Start your journey</a>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <!-- Post Header -->
+    <section class="post-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a> › <a href="blog.html">Blog</a> ›
+          <span>{{TITLE}}</span>
+        </nav>
+
+        <h1 class="post-title">{{TITLE}}</h1>
+        <p class="post-meta">
+          By <strong>Stella Marrali</strong> •
+          <time datetime="{{DATE_ISO}}">{{DATE_HUMAN}}</time> •
+          <span class="reading-time" id="readingTime">5 min read</span>
+        </p>
+
+        <figure class="post-cover">
+          <img src="{{COVER_PATH}}" alt="{{COVER_ALT}}" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- Post Body -->
+    <section class="section">
+      <div class="container">
+        <article class="article-content" id="articleBody">
+          <!-- Write from here -->
+          <p>
+            Open with a short promise and a strong first paragraph that meets
+            the reader where they are right now.
+          </p>
+
+          <h2>Section headline that sets a clear goal</h2>
+          <p>
+            Explain the idea in simple language. Keep paragraphs short. Ground
+            examples in daily life.
+          </p>
+          <ul>
+            <li>Action one the reader can try today</li>
+            <li>Action two that requires only a few minutes</li>
+            <li>Action three that creates a visible shift</li>
+          </ul>
+
+          <h3>Make it practical</h3>
+          <p>
+            Give a micro routine. Tie it to breath, posture or a simple
+            journaling prompt.
+          </p>
+
+          <p>
+            Close with an invitation to apply the ideas this week. Progress is a
+            rhythm.
+          </p>
+          <!-- Write until here -->
+        </article>
+
+        <!-- Recommended Reads -->
+        <div class="recommended">
+          <h2 class="section-title">Recommended reads</h2>
+          <p class="section-lead">
+            Continue your journey with these selections.
+          </p>
+
+          <div class="solution-grid">
+            <article class="solution-card">
+              <h3 class="solution-title">✦ The Rebalance Method Explained</h3>
+              <p class="solution-text">
+                How regulation, energy flow and conscious coaching work
+                together.
+              </p>
+              <div class="service-cta">
+                <a href="post-rebalance-method.html" class="btn"
+                  >Read Article</a
+                >
+              </div>
+            </article>
+
+            <article class="solution-card">
+              <h3 class="solution-title">✦ 5 Ways To Recenter Fast</h3>
+              <p class="solution-text">
+                Grounding tools that fit into a busy day.
+              </p>
+              <div class="service-cta">
+                <a href="post-recenter-fast.html" class="btn">Read Article</a>
+              </div>
+            </article>
+
+            <article class="solution-card">
+              <h3 class="solution-title">
+                ✦ What Healing Your Energy Really Means
+              </h3>
+              <p class="solution-text">
+                Move from resistance to flow with simple daily patterns.
+              </p>
+              <div class="service-cta">
+                <a href="post-heal-your-energy.html" class="btn"
+                  >Read Article</a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="post-footer-cta">
+          <a href="blog.html" class="btn-secondary">Back to all articles</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <p class="footer-text">
+          © 2025 AZHURYEL | The Azhuryel Rebalance System | All rights reserved.
+        </p>
+        <p class="footer-tagline">Balance • Growth • Energy</p>
+        <nav class="footer-nav">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="src/script.js"></script>
+
+    <!-- Inline reading-time calc: no edits to script.js needed -->
+    <script>
+      (function () {
+        const el = document.getElementById("articleBody");
+        if (!el) return;
+        const text = el.innerText || "";
+        const words = text.trim().split(/\s+/).length;
+        const minutes = Math.max(1, Math.round(words / 200));
+        const rt = document.getElementById("readingTime");
+        if (rt) rt.textContent = minutes + " min read";
+      })();
+    </script>
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "{{TITLE}}",
+        "image": "https://azhuryel.com/{{COVER_PATH}}",
+        "datePublished": "{{DATE_ISO}}",
+        "dateModified": "{{DATE_ISO}}",
+        "author": { "@type": "Person", "name": "Stella Marrali" },
+        "publisher": {
+          "@type": "Organization",
+          "name": "AZHURYEL",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://azhuryel.com/assets/images/icons/dark.png"
+          }
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://azhuryel.com/{{SLUG}}"
+        },
+        "description": "{{DESCRIPTION}}"
+      }
+    </script>
+  </body>
+</html>
