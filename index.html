@@ -406,28 +406,61 @@
       <div class="container">
         <h2 class="section-title">Begin Your Transformation</h2>
         <p class="section-lead">
-          Download your <strong>Azhuryel Rebalance Starter Kit</strong> and experience the first shift toward calm and clarity. Inside you will find breathing rituals self-healing practices and guided exercises from the Azhuryel System. Instant access no spam only the start of your growth journey.
+          Receive your <strong>Azhuryel Rebalance Starter Kit</strong> and experience the first shift toward calm and clarity. Inside you will find breathing rituals, self-healing practices and guided exercises from the Azhuryel System. Instant access no spam only the start of your growth journey.
         </p>
 
-        <form
-          class="freebie-form"
-          action="#"
-          method="post"
-          id="freebie-form"
-          novalidate
-        >
+        <!-- Contact Form Section -->
+    <section class="section" id="contact-form">
+      <div class="container">
+        <h2 class="section-title">Request your Free Rebalance Starter Kit</h2>
+        <p class="section-lead">
+          Fill in the form below.
+        </p>
+
+        <form class="freebie-form" action="#" method="post" novalidate>
           <input
-            id="freebie-email"
-            name="email"
-            type="email"
+            type="text"
+            name="name"
+            id="contact-name"
             class="freebie-input"
-            placeholder="Enter your email address"
+            placeholder="Your full name"
             required
-            autocomplete="email"
-            inputmode="email"
-            aria-label="Email address"
           />
-          <button type="submit" class="btn-premium">Get Your Free Kit Now</button>
+
+          <input
+            type="email"
+            name="email"
+            id="contact-email"
+            class="freebie-input"
+            placeholder="Your email address"
+            required
+          />
+
+          <textarea
+            name="message"
+            id="contact-message"
+            class="freebie-input"
+            placeholder="Yes I want my free rebalance starter kit, thank you!"
+            rows="6"
+            required
+          ></textarea>
+
+          <label class="section-lead" style="font-size: 0.95rem; display: block;">
+            <input type="checkbox" name="privacy" required />
+            I agree to the
+            <a href="privacy.html" target="_blank" style="color: var(--violet-dark); text-decoration: underline;">
+              Privacy Policy.
+            </a>
+          </label>
+
+          <label class="section-lead" style="font-size: 0.95rem; display: block;">
+            <input type="checkbox" name="newsletter" />
+            Yes, I want to receive updates and free resources.
+          </label>
+
+          <button type="submit" class="btn-premium" style="margin-top: 1.2rem;">
+            Send Message
+          </button>
         </form>
       </div>
     </section>
