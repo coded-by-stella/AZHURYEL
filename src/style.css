@@ -12,8 +12,9 @@
   --soft-gold-line: #f5dfa0;
 
   --font-display: "Cinzel", serif;
-  --font-sans: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
-    Cantarell, Helvetica, Arial, sans-serif;
+  --font-sans:
+    "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
+    Helvetica, Arial, sans-serif;
 
   --radius-xl: 16px;
   --radius-lg: 12px;
@@ -102,14 +103,18 @@ p {
   text-transform: uppercase;
   letter-spacing: 0.4px;
   box-shadow: 0 6px 16px rgba(171, 139, 249, 0.35);
-  transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease,
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    background 0.2s ease,
     box-shadow 0.2s ease;
 }
 .btn-primary:hover {
   transform: translateY(-2px);
   opacity: 0.9;
   background: var(--violet-dark);
-  box-shadow: 0 10px 24px rgba(171, 139, 249, 0.45),
+  box-shadow:
+    0 10px 24px rgba(171, 139, 249, 0.45),
     0 0 18px rgba(231, 186, 69, 0.4);
 }
 
@@ -125,7 +130,10 @@ p {
   text-transform: uppercase;
   letter-spacing: 0.3px;
   box-shadow: 0 6px 16px rgba(79, 197, 144, 0.35);
-  transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease,
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    background 0.2s ease,
     box-shadow 0.2s ease;
 }
 .btn-secondary:hover {
@@ -147,7 +155,10 @@ p {
   text-transform: uppercase;
   letter-spacing: 0.4px;
   box-shadow: 0 6px 16px rgba(231, 186, 69, 0.35);
-  transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease,
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    background 0.2s ease,
     box-shadow 0.2s ease;
 }
 .btn-premium:hover {
@@ -198,7 +209,9 @@ p {
   font-size: clamp(2.2rem, 5vw, 3.4rem);
   margin-bottom: var(--space-md);
   white-space: nowrap;
-  text-shadow: 0 0 2px var(--gold), 0 0 6px rgba(255, 209, 102, 0.5);
+  text-shadow:
+    0 0 2px var(--gold),
+    0 0 6px rgba(255, 209, 102, 0.5);
 }
 .hero-subtitle {
   font-family: var(--font-display);
@@ -257,7 +270,9 @@ p {
   border: 1px solid var(--violet-dark);
   border-radius: var(--radius-xl);
   background: #ffffff;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 .problem-card:hover {
   transform: translateY(-2px);
@@ -305,7 +320,9 @@ p {
   border-radius: var(--radius-xl);
   border: 1px solid var(--violet);
   box-shadow: 0 4px 12px rgba(15, 26, 43, 0.05);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 .testimonial-card:hover {
   transform: translateY(-3px);
@@ -421,7 +438,9 @@ p {
   border: 1px solid var(--violet-dark);
   border-radius: var(--radius-xl);
   background: #fff;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
   text-align: left;
 }
 .problem-card h3 {
@@ -450,7 +469,9 @@ p {
   border: 1px solid var(--soft-gold-line);
   padding: var(--space-lg);
   text-align: left;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 .solution-card:hover {
   transform: translateY(-3px);
@@ -547,7 +568,9 @@ p {
 .testimonial-slide {
   display: none;
   opacity: 0;
-  transition: opacity 0.9s ease, transform 0.6s ease;
+  transition:
+    opacity 0.9s ease,
+    transform 0.6s ease;
   background: #fff;
   border-radius: var(--radius-xl);
   border: 1.5px solid var(--violet);
@@ -671,68 +694,118 @@ p {
   box-shadow: 0 0 8px rgba(231, 186, 69, 0.6);
 }
 
-/* Navbar */
+/* ============================
+   NAVBAR AGGIORNATA
+   ============================ */
+
+/* Navbar Container */
 .navbar {
   width: 100%;
-  height: 64px;
+  height: 72px; /* Leggermente più alta per far respirare i pulsanti */
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0 1.5rem;
+  padding: 0 5%; /* Usa percentuale per adattarsi meglio */
   background: var(--glass);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   position: sticky;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   top: 0;
   z-index: 1000;
+  box-shadow: 0 4px 20px rgba(15, 26, 43, 0.03);
 }
 
 /* Logo */
 .logo {
   display: inline-flex;
   align-items: center;
+  text-decoration: none;
 }
 .logo img {
-  height: 42px;
+  height: 48px; /* Un po' più grande per bilanciare */
   width: auto;
   display: block;
+  transition: transform 0.3s ease;
+}
+.logo:hover img {
+  transform: rotate(-5deg); /* Piccolo effetto carino al logo */
 }
 
-/* Primary nav */
+/* Primary nav (Il menu centrale) */
 .nav-links ul {
   display: flex;
   align-items: center;
-  gap: 2rem;
-}
-.nav-links a {
-  color: var(--dark);
-  font-weight: 500;
-  transition: color 0.25s ease;
-}
-.nav-links a:hover,
-.nav-links a.active {
-  color: var(--violet);
+  gap: 0.8rem; /* Spazio ridotto perché i pulsanti hanno padding */
+
+  /* QUI TOGLIAMO I PUNTI ELENCO: */
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-/* CTA */
+/* Stile dei pulsanti del menu */
+.nav-links a {
+  display: inline-block;
+  color: var(--night-blue);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-decoration: none;
+
+  /* Creazione forma bottone */
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px; /* Bordo a pillola (molto arrotondato) */
+  background-color: transparent; /* Sfondo trasparente di base */
+  border: 1px solid transparent; /* Bordo invisibile per evitare scatti */
+
+  /* Transizioni fluide */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Effetto Hover sui pulsanti */
+.nav-links a:hover {
+  background-color: rgba(
+    171,
+    139,
+    249,
+    0.15
+  ); /* Viola chiarissimo trasparente */
+  color: var(--violet-dark);
+  transform: translateY(-2px); /* Saltino verso l'alto */
+}
+
+/* Stato attivo (pagina corrente) */
+.nav-links a.active {
+  background-color: var(--violet);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(171, 139, 249, 0.4);
+  font-weight: 600;
+}
+
+/* CTA Button (Il bottone principale a destra) */
 .cta-btn {
   background-color: var(--gold);
   color: var(--night-blue);
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--radius-md);
-  font-weight: 600;
+  padding: 0.75rem 1.8rem;
+  border-radius: 50px; /* Anche questo a pillola */
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9rem;
   text-decoration: none;
-  white-space: nowrap;
-  position: relative;
-  top: 0;
-  right: 0;
-  flex-shrink: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(231, 186, 69, 0.3);
+  transition: all 0.3s ease;
 }
+
 .cta-btn:hover {
   background-color: var(--gold-dark);
-  color: var(--night-blue);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(231, 186, 69, 0.45);
 }
 
 /* Hamburger (mobile only) */
@@ -824,7 +897,9 @@ p {
   padding: var(--space-lg);
   margin-bottom: var(--space-lg);
   text-align: left;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 .service-block:hover {
   transform: translateY(-3px);
@@ -1184,4 +1259,3 @@ p {
     padding: var(--space-md);
   }
 }
-
