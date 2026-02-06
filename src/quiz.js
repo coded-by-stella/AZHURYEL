@@ -1,14 +1,15 @@
 // src/quiz.js
 (function () {
-  const form = document.getElementById("rebalance-quiz");
-  if (!form) return;
+  const quizForm = document.getElementById("rebalance-quiz");
+  if (!quizForm) return;
 
   const errorEl = document.getElementById("quiz-error");
-  const resultBox = document.getElementById("quiz-result");
-  const titleEl = document.getElementById("result-title");
-  const descEl = document.getElementById("result-description");
-  const nextEl = document.getElementById("result-nextstep");
-  const hiddenResultEl = document.getElementById("quiz-result-hidden");
+  const emailGate = document.getElementById("email-gate");
+
+  const hiddenProfileEl = document.getElementById("quiz-profile-hidden");
+  const hiddenTitleEl = document.getElementById("quiz-title-hidden");
+  const hiddenDescEl = document.getElementById("quiz-desc-hidden");
+  const hiddenNextEl = document.getElementById("quiz-next-hidden");
 
   const profiles = {
     HYPER: {
@@ -41,9 +42,9 @@
     },
   };
 
-  function getResult() {
+  function calculateResult() {
     const counts = { HYPER: 0, HOLDER: 0, CYCLICAL: 0, DISCONNECTED: 0 };
-    const data = new FormData(form);
+    const data = new FormData(quizForm);
 
     for (let i = 1; i <= 8; i++) {
       const v = data.get(`q${i}`);
@@ -61,27 +62,29 @@
       }
     }
 
-    return profiles[winner];
+    return { profile: winner, ...profiles[winner] };
   }
 
-  form.addEventListener("submit", function (e) {
+  quizForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const res = getResult();
+    const res = calculateResult();
     if (!res) {
       errorEl.style.display = "block";
-      resultBox.style.display = "none";
+      emailGate.style.display = "none";
       return;
     }
 
     errorEl.style.display = "none";
-    titleEl.textContent = res.title;
-    descEl.textContent = res.description;
-    nextEl.textContent = res.nextStep;
 
-    if (hiddenResultEl) hiddenResultEl.value = res.title;
+    // Store result in hidden fields for Netlify submission.
+    if (hiddenProfileEl) hiddenProfileEl.value = res.profile;
+    if (hiddenTitleEl) hiddenTitleEl.value = res.title;
+    if (hiddenDescEl) hiddenDescEl.value = res.description;
+    if (hiddenNextEl) hiddenNextEl.value = res.nextStep;
 
-    resultBox.style.display = "block";
-    resultBox.scrollIntoView({ behavior: "smooth", block: "start" });
+    // Show email gate. Do NOT reveal result on page.
+    emailGate.style.display = "block";
+    emailGate.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 })();

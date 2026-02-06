@@ -65,7 +65,7 @@
         <h1 class="hero-title">The 2-minute Rebalance Quiz</h1>
         <p class="hero-subtitle">
           Discover your nervous system pattern as an entrepreneur and get a
-          grounded next step you can apply immediately.
+          grounded next step.
         </p>
 
         <p class="hero-note">This is not a diagnosis. It is a clarity tool.</p>
@@ -82,10 +82,11 @@
         <p class="section-lead" style="text-align: left">
           This short quiz helps you understand how your nervous system is
           currently responding to pressure, responsibility and constant
-          decision-making. There are no right or wrong answers. Just notice what
+          decision-making. There are no right or wrong answers. Notice what
           resonates and answer honestly.
         </p>
 
+        <!-- 1) QUESTIONS FORM -->
         <form id="rebalance-quiz" class="freebie-form" novalidate>
           <fieldset class="solution-card" style="text-align: left">
             <legend class="solution-title">
@@ -316,34 +317,20 @@
             class="hero-note"
             style="display: none; margin-top: 0.75rem"
           >
-            Please answer all questions before viewing your result.
+            Please answer all questions before continuing.
           </p>
         </form>
 
+        <!-- 2) EMAIL GATE (NO RESULT SHOWN ON PAGE) -->
         <div
-          id="quiz-result"
+          id="email-gate"
           class="solution-card"
           style="display: none; margin-top: 1.25rem; text-align: left"
         >
-          <h3 id="result-title" class="solution-title"></h3>
-          <p
-            id="result-description"
-            class="section-lead"
-            style="text-align: left"
-          ></p>
-          <p
-            id="result-nextstep"
-            class="section-lead"
-            style="text-align: left"
-          ></p>
-
-          <hr style="margin: 1rem 0; opacity: 0.25" />
-
-          <h4 class="solution-title">Send my result to my email</h4>
-          <p class="section-lead" style="text-align: left; margin-top: 0.5rem">
-            Get your result in your inbox, plus grounded resources for
-            entrepreneurs who want calm focus, inner stability and aligned
-            leadership.
+          <h3 class="solution-title">Your result is ready</h3>
+          <p class="section-lead" style="margin-top: 0.5rem">
+            Enter your email to receive your nervous system pattern and your
+            grounded next step.
           </p>
 
           <form
@@ -372,8 +359,26 @@
 
             <input
               type="hidden"
-              name="quiz_result"
-              id="quiz-result-hidden"
+              name="quiz_profile"
+              id="quiz-profile-hidden"
+              value=""
+            />
+            <input
+              type="hidden"
+              name="quiz_result_title"
+              id="quiz-title-hidden"
+              value=""
+            />
+            <input
+              type="hidden"
+              name="quiz_result_description"
+              id="quiz-desc-hidden"
+              value=""
+            />
+            <input
+              type="hidden"
+              name="quiz_result_nextstep"
+              id="quiz-next-hidden"
               value=""
             />
 
@@ -387,8 +392,7 @@
                 href="privacy.html"
                 target="_blank"
                 style="text-decoration: underline"
-              >
-                Privacy Policy </a
+                >Privacy Policy</a
               >.
             </label>
 
@@ -401,13 +405,9 @@
             </p>
           </form>
 
-          <a
-            href="contact.html"
-            class="btn-secondary"
-            style="margin-top: 0.75rem; display: inline-block"
-          >
-            Book your free clarity call
-          </a>
+          <p class="hero-note" style="margin-top: 0.75rem">
+            After you submit, please check your inbox (and spam folder).
+          </p>
         </div>
 
         <a href="contact.html" class="btn-secondary" style="margin-top: 1rem">
