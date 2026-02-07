@@ -1,27 +1,26 @@
 /* ============================
-   AZHURYEL THEME 02
-   Ivory Sage (Calm Trust, High Readability)
+   AZHURYEL THEME 03
+   Midnight Aurora (Modern Tech-Spiritual)
    ============================ */
 
 :root {
-  --bg: #fbfaf7;
-  --bg-2: #f4f2ec;
-  --surface: #ffffff;
-  --surface-2: #ffffff;
-  --stroke: rgba(22, 33, 45, 0.12);
+  --bg: #070b14;
+  --bg-2: #0b1222;
+  --surface: rgba(255, 255, 255, 0.05);
+  --surface-2: rgba(255, 255, 255, 0.08);
+  --stroke: rgba(255, 255, 255, 0.12);
 
-  --text: rgba(17, 24, 39, 0.92);
-  --muted: rgba(17, 24, 39, 0.72);
-  --muted-2: rgba(17, 24, 39, 0.58);
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.72);
+  --muted-2: rgba(255, 255, 255, 0.56);
 
-  --sage: #7a9b8b;
-  --sage-2: #a8c4b6;
-  --navy: #16212d;
-  --navy-2: #243245;
-  --gold: #c6a25a;
+  --aurora: #38f2c7;
+  --aurora-2: #44a6ff;
+  --violet: #ab8bf9;
+  --gold: #e7c97a;
 
-  --shadow: 0 18px 55px rgba(15, 23, 42, 0.1);
-  --shadow-soft: 0 10px 26px rgba(15, 23, 42, 0.08);
+  --shadow: 0 18px 55px rgba(0, 0, 0, 0.55);
+  --shadow-soft: 0 10px 28px rgba(0, 0, 0, 0.35);
 
   --radius: 18px;
   --radius-lg: 26px;
@@ -30,26 +29,31 @@
 
   --font-body:
     "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  --font-display: "Playfair Display", "Cinzel", Georgia, serif;
+  --font-display: "Cinzel", "Playfair Display", Georgia, serif;
 
-  --h1: clamp(2.05rem, 4vw, 3.05rem);
-  --h2: clamp(1.55rem, 2.5vw, 2.05rem);
-  --h3: 1.12rem;
+  --h1: clamp(2.1rem, 4vw, 3.2rem);
+  --h2: clamp(1.6rem, 2.5vw, 2.1rem);
+  --h3: 1.14rem;
   --p: 1.02rem;
-  --lead: 1.1rem;
+  --lead: 1.08rem;
 
-  --line: 1.75;
+  --line: 1.72;
 
   --grad-hero:
     radial-gradient(
-      1000px 520px at 15% 10%,
-      rgba(122, 155, 139, 0.22),
+      1100px 560px at 15% 10%,
+      rgba(56, 242, 199, 0.18),
       transparent 58%
     ),
     radial-gradient(
-      900px 480px at 85% 0%,
-      rgba(198, 162, 90, 0.12),
-      transparent 55%
+      980px 520px at 85% 18%,
+      rgba(68, 166, 255, 0.16),
+      transparent 54%
+    ),
+    radial-gradient(
+      900px 480px at 55% 0%,
+      rgba(171, 139, 249, 0.1),
+      transparent 58%
     ),
     linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
 }
@@ -85,15 +89,14 @@ img {
 }
 
 .section {
-  padding: clamp(3.1rem, 6vw, 5.1rem) 0;
+  padding: clamp(3.2rem, 6vw, 5.2rem) 0;
 }
 
 .section-title {
   font-family: var(--font-display);
   font-size: var(--h2);
   margin: 0 0 0.85rem;
-  color: var(--navy);
-  letter-spacing: 0.2px;
+  letter-spacing: 0.3px;
 }
 
 .section-lead {
@@ -105,7 +108,7 @@ img {
 
 .hero {
   background: var(--grad-hero);
-  padding: clamp(4.2rem, 8vw, 6.8rem) 0;
+  padding: clamp(4.5rem, 8vw, 7rem) 0;
   border-bottom: 1px solid var(--stroke);
 }
 
@@ -116,20 +119,19 @@ img {
 }
 
 .logo {
-  width: 86px;
+  width: 88px;
   margin: 0 auto 1.2rem;
-  filter: drop-shadow(0 14px 24px rgba(22, 33, 45, 0.18));
+  filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.55));
 }
 
 .hero-title {
   font-family: var(--font-display);
   font-size: var(--h1);
   margin: 0 0 1rem;
-  color: var(--navy);
 }
 
 .hero-subtitle {
-  font-size: clamp(1.05rem, 2vw, 1.18rem);
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
   color: var(--muted);
   margin: 0 auto 1rem;
   max-width: 78ch;
@@ -155,8 +157,8 @@ img {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(251, 250, 247, 0.75);
-  backdrop-filter: blur(12px);
+  background: rgba(7, 11, 20, 0.7);
+  backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--stroke);
   padding: 0.9rem 1.1rem;
   display: flex;
@@ -169,16 +171,15 @@ img {
   align-items: center;
   gap: 1.2rem;
 }
-
 .brand-lockup {
   display: grid;
   gap: 0.15rem;
 }
+
 .brand-name {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1.18rem;
-  color: var(--navy);
+  font-size: 1.2rem;
 }
 
 .brand-payoff {
@@ -207,21 +208,25 @@ img {
 }
 
 .nav-links a:hover {
-  background: rgba(22, 33, 45, 0.06);
-  color: var(--navy);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
   transform: translateY(-1px);
 }
 
 .nav-links a.active {
-  color: var(--navy);
-  background: rgba(122, 155, 139, 0.18);
-  border: 1px solid rgba(122, 155, 139, 0.35);
+  color: var(--text);
+  background: linear-gradient(
+    135deg,
+    rgba(56, 242, 199, 0.18),
+    rgba(68, 166, 255, 0.12)
+  );
+  border: 1px solid rgba(56, 242, 199, 0.22);
 }
 
 .hamburger {
   display: none;
   border: 1px solid var(--stroke);
-  background: rgba(22, 33, 45, 0.04);
+  background: rgba(255, 255, 255, 0.04);
   border-radius: 12px;
   padding: 0.55rem;
   cursor: pointer;
@@ -231,12 +236,33 @@ img {
   display: block;
   width: 22px;
   height: 2px;
-  background: rgba(22, 33, 45, 0.78);
+  background: rgba(255, 255, 255, 0.82);
   margin: 4px 0;
   border-radius: 2px;
 }
 
-/* Grids and cards */
+/* Accent utility */
+.accent {
+  color: var(--aurora);
+  font-weight: 700;
+}
+
+.accent-2 {
+  color: var(--aurora-2);
+  font-weight: 700;
+}
+
+.highlight {
+  background: linear-gradient(
+    90deg,
+    rgba(56, 242, 199, 0.25),
+    rgba(171, 139, 249, 0.2)
+  );
+  padding: 0.06rem 0.35rem;
+  border-radius: 10px;
+}
+
+/* Cards and grids */
 .problem-grid,
 .solution-grid {
   display: grid;
@@ -248,11 +274,36 @@ img {
 .problem-card,
 .solution-card {
   grid-column: span 6;
-  background: var(--surface);
+  background: linear-gradient(
+    180deg,
+    var(--surface),
+    rgba(255, 255, 255, 0.03)
+  );
   border: 1px solid var(--stroke);
   border-radius: var(--radius);
   padding: 1.35rem;
   box-shadow: var(--shadow-soft);
+  position: relative;
+  overflow: hidden;
+}
+
+.problem-card::before,
+.solution-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background:
+    radial-gradient(
+      520px 220px at 20% 0%,
+      rgba(56, 242, 199, 0.1),
+      transparent 55%
+    ),
+    radial-gradient(
+      520px 220px at 80% 20%,
+      rgba(68, 166, 255, 0.1),
+      transparent 55%
+    );
+  pointer-events: none;
 }
 
 .solution-grid .solution-card {
@@ -267,7 +318,7 @@ img {
 .solution-title {
   margin: 0 0 0.55rem;
   font-size: var(--h3);
-  color: var(--navy);
+  position: relative;
 }
 
 .problem-card p,
@@ -275,6 +326,7 @@ img {
   margin: 0;
   color: var(--muted);
   font-size: var(--p);
+  position: relative;
 }
 
 .hero-facts,
@@ -294,12 +346,16 @@ img {
 .testimonials {
   border-top: 1px solid var(--stroke);
   border-bottom: 1px solid var(--stroke);
-  background: linear-gradient(180deg, rgba(122, 155, 139, 0.06), transparent);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
 }
 
 .testimonial-slide {
   display: none;
-  background: var(--surface);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.03)
+  );
   border: 1px solid var(--stroke);
   border-radius: var(--radius-lg);
   padding: 1.6rem;
@@ -320,7 +376,6 @@ img {
 .testimonial-author {
   margin: 0.35rem 0 0;
   font-weight: 600;
-  color: var(--navy);
 }
 .testimonial-discipline {
   margin: 0.25rem 0 0;
@@ -337,8 +392,8 @@ img {
 
 .carousel-controls button {
   border: 1px solid var(--stroke);
-  background: rgba(22, 33, 45, 0.04);
-  color: var(--navy);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
   border-radius: 14px;
   padding: 0.55rem 0.85rem;
   cursor: pointer;
@@ -349,7 +404,7 @@ img {
 
 .carousel-controls button:hover {
   transform: translateY(-1px);
-  background: rgba(22, 33, 45, 0.07);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .carousel-dots {
@@ -364,15 +419,15 @@ img {
   width: 9px;
   height: 9px;
   border-radius: 99px;
-  background: rgba(22, 33, 45, 0.16);
+  background: rgba(255, 255, 255, 0.22);
   border: 1px solid var(--stroke);
   cursor: pointer;
 }
 
 .dot.active,
 .carousel-dot.active {
-  background: rgba(122, 155, 139, 0.95);
-  border-color: rgba(122, 155, 139, 0.55);
+  background: rgba(56, 242, 199, 0.95);
+  border-color: rgba(56, 242, 199, 0.55);
 }
 
 /* Buttons */
@@ -384,7 +439,7 @@ img {
   align-items: center;
   justify-content: center;
   gap: 0.45rem;
-  font-weight: 600;
+  font-weight: 700;
   border-radius: 14px;
   padding: 0.85rem 1.1rem;
   border: 1px solid transparent;
@@ -396,32 +451,39 @@ img {
 }
 
 .btn-primary {
-  background: rgba(122, 155, 139, 0.16);
-  border-color: rgba(122, 155, 139, 0.38);
-  color: var(--navy);
+  background: linear-gradient(
+    135deg,
+    rgba(56, 242, 199, 0.18),
+    rgba(68, 166, 255, 0.12)
+  );
+  border-color: rgba(56, 242, 199, 0.22);
+  color: var(--text);
 }
 
 .btn-primary:hover {
   transform: translateY(-1px);
-  background: rgba(122, 155, 139, 0.22);
 }
 
 .btn-secondary {
-  background: rgba(22, 33, 45, 0.03);
+  background: rgba(255, 255, 255, 0.05);
   border-color: var(--stroke);
-  color: var(--navy);
+  color: var(--text);
 }
 
 .btn-secondary:hover {
   transform: translateY(-1px);
-  background: rgba(22, 33, 45, 0.06);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .btn-premium,
 .cta-btn {
-  background: linear-gradient(135deg, var(--navy), rgba(122, 155, 139, 0.95));
-  color: #ffffff;
-  box-shadow: 0 14px 30px rgba(22, 33, 45, 0.2);
+  background: linear-gradient(
+    135deg,
+    rgba(56, 242, 199, 0.95),
+    rgba(171, 139, 249, 0.85)
+  );
+  color: #071018;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.45);
 }
 
 .btn-premium:hover,
@@ -429,6 +491,7 @@ img {
   transform: translateY(-1px);
 }
 
+/* Forms */
 .freebie-form {
   margin-top: 1.4rem;
   display: grid;
@@ -441,26 +504,25 @@ textarea.freebie-input {
   width: 100%;
   border-radius: 14px;
   border: 1px solid var(--stroke);
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.04);
   color: var(--text);
   padding: 0.85rem 0.95rem;
   outline: none;
-  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
 }
 
 .freebie-input::placeholder {
-  color: rgba(17, 24, 39, 0.4);
+  color: rgba(255, 255, 255, 0.45);
 }
 
 .freebie-input:focus {
-  border-color: rgba(122, 155, 139, 0.65);
-  box-shadow: 0 0 0 4px rgba(122, 155, 139, 0.18);
+  border-color: rgba(56, 242, 199, 0.55);
+  box-shadow: 0 0 0 4px rgba(56, 242, 199, 0.14);
 }
 
 .footer {
   border-top: 1px solid var(--stroke);
   padding: 2.2rem 0;
-  background: var(--bg-2);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .footer-container {
@@ -484,7 +546,7 @@ textarea.freebie-input {
   color: var(--muted);
 }
 .footer-nav a:hover {
-  color: var(--navy);
+  color: var(--text);
 }
 
 .footer-cta {
@@ -493,10 +555,10 @@ textarea.freebie-input {
   background:
     radial-gradient(
       900px 450px at 50% 0%,
-      rgba(122, 155, 139, 0.18),
+      rgba(56, 242, 199, 0.18),
       transparent 60%
     ),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.6), transparent);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
   border-top: 1px solid var(--stroke);
 }
 
@@ -508,8 +570,8 @@ textarea.freebie-input {
 .cookie-banner-inner {
   width: min(980px, 100%);
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(12px);
+  background: rgba(11, 18, 34, 0.86);
+  backdrop-filter: blur(14px);
   border: 1px solid var(--stroke);
   border-radius: var(--radius-lg);
   padding: 1.2rem;
@@ -519,7 +581,6 @@ textarea.freebie-input {
 .cookie-title {
   margin: 0 0 0.25rem;
   font-weight: 700;
-  color: var(--navy);
 }
 .cookie-text {
   margin: 0 0 0.9rem;
@@ -549,7 +610,7 @@ textarea.freebie-input {
     flex-direction: column;
     align-items: stretch;
     gap: 0.35rem;
-    background: rgba(251, 250, 247, 0.96);
+    background: rgba(7, 11, 20, 0.94);
     border: 1px solid var(--stroke);
     border-radius: 18px;
     padding: 0.75rem;
