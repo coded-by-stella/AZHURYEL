@@ -650,6 +650,41 @@ textarea:focus {
   max-width: 720px;
   margin: 0 auto;
 }
+/* Quiz form layout helpers */
+.freebie-form fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+
+.freebie-form .solution-card {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.freebie-form .solution-card + .solution-card {
+  margin-top: 1.25rem;
+}
+
+.freebie-form legend.solution-title {
+  margin-bottom: 0.5rem;
+}
+
+.form-row {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.form-row-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 640px) {
+  .form-row-2 {
+    grid-template-columns: 1fr;
+  }
+}
 
 .freebie-input {
   width: 100%;

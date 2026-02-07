@@ -132,7 +132,7 @@
               placeholder="Full name"
               required
             />
-            <br /><br />
+
             <input
               type="email"
               name="email"
@@ -141,7 +141,7 @@
               placeholder="Email address"
               required
             />
-            <br /><br />
+
             <div class="form-row form-row-2">
               <select name="phone_country_code" class="freebie-input" required>
                 <option value="" selected disabled>Country code</option>
@@ -191,7 +191,7 @@
               placeholder="Your role or title (example: CEO, founder, manager)"
               required
             />
-            <br /><br />
+
             <input
               type="text"
               name="business_type"
@@ -250,13 +250,32 @@
 
             <label class="section-lead" style="display: block">
               5) Time zone (for a video call if you request one)
-              <input
-                type="text"
-                name="context_time_zone"
-                class="freebie-input"
-                placeholder="Example: CET, GMT+1, EST"
-                required
-              />
+              <select name="context_time_zone" class="freebie-input" required>
+                <option value="" selected disabled>
+                  Select your time zone
+                </option>
+                <option value="UTC-08:00">UTC-08:00 (PST)</option>
+                <option value="UTC-07:00">UTC-07:00 (MST)</option>
+                <option value="UTC-06:00">UTC-06:00 (CST)</option>
+                <option value="UTC-05:00">UTC-05:00 (EST)</option>
+                <option value="UTC-04:00">UTC-04:00</option>
+                <option value="UTC-03:00">UTC-03:00</option>
+                <option value="UTC-02:00">UTC-02:00</option>
+                <option value="UTC-01:00">UTC-01:00</option>
+                <option value="UTC+00:00">UTC+00:00 (GMT)</option>
+                <option value="UTC+01:00">UTC+01:00 (CET)</option>
+                <option value="UTC+02:00">UTC+02:00 (EET)</option>
+                <option value="UTC+03:00">UTC+03:00</option>
+                <option value="UTC+04:00">UTC+04:00</option>
+                <option value="UTC+05:00">UTC+05:00</option>
+                <option value="UTC+06:00">UTC+06:00</option>
+                <option value="UTC+07:00">UTC+07:00</option>
+                <option value="UTC+08:00">UTC+08:00</option>
+                <option value="UTC+09:00">UTC+09:00</option>
+                <option value="UTC+10:00">UTC+10:00</option>
+                <option value="UTC+11:00">UTC+11:00</option>
+                <option value="UTC+12:00">UTC+12:00</option>
+              </select>
             </label>
 
             <label class="section-lead" style="display: block">
