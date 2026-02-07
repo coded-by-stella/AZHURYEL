@@ -1,6 +1,9 @@
 /* =========================================
    AZHURYEL · Modern Minimal System
    Base palette: Violet + Blue, CTA: Green
+   Compatible with: nav-links.active AND nav-links.open
+   Compatible with: .dot AND .carousel-dot
+   Includes: cookie banner styles + accessibility helpers
    ========================================= */
 
 /* Root variables */
@@ -217,12 +220,67 @@ textarea:focus {
 }
 
 /* =========================================
+   Cookie banner
+   ========================================= */
+
+.cookie-banner {
+  position: fixed;
+  inset: auto 0 0 0;
+  padding: 1rem 1rem 1.25rem;
+  background: rgba(15, 26, 43, 0.92);
+  color: #ffffff;
+  z-index: 2000;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.cookie-banner-inner {
+  width: min(var(--container), 92%);
+  margin: 0 auto;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.cookie-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+}
+
+.cookie-text {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.cookie-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+/* Make cookie banner buttons readable on dark */
+.cookie-banner .btn-secondary,
+.cookie-banner .btn-outline {
+  border-color: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+}
+.cookie-banner .btn-secondary:hover,
+.cookie-banner .btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+/* =========================================
    Navbar
    ========================================= */
 
 .navbar {
   width: 100%;
-  /* height: 74px;  <-- rimuoviamo l'altezza fissa */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -279,7 +337,6 @@ textarea:focus {
   font-size: 0.84rem;
   color: rgba(15, 26, 43, 0.62);
   max-width: 360px;
-  /* niente tagli brutti su desktop */
   white-space: normal;
 }
 
@@ -381,7 +438,9 @@ textarea:focus {
     gap: 0.85rem;
   }
 
-  .nav-links.active {
+  /* Compatibility: both class names open the menu */
+  .nav-links.active,
+  .nav-links.open {
     display: flex;
     justify-content: center;
     pointer-events: auto;
@@ -622,6 +681,14 @@ label.section-lead {
   max-width: 720px;
 }
 
+fieldset.solution-card {
+  border: 1px solid rgba(15, 26, 43, 0.08);
+}
+
+legend.solution-title {
+  padding: 0 0.4rem;
+}
+
 /* =========================================
    Testimonials Carousel
    ========================================= */
@@ -721,7 +788,9 @@ label.section-lead {
   gap: 0.55rem;
 }
 
-.dot {
+/* Compatibility: .dot spans and .carousel-dot buttons */
+.dot,
+.carousel-dot {
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -734,13 +803,15 @@ label.section-lead {
     border-color 0.18s ease;
 }
 
-.dot:hover {
+.dot:hover,
+.carousel-dot:hover {
   transform: scale(1.1);
   background: rgba(17, 167, 239, 0.25);
   border-color: rgba(17, 167, 239, 0.28);
 }
 
-.dot.active {
+.dot.active,
+.carousel-dot.active {
   background: rgba(17, 167, 239, 0.65);
   border-color: rgba(17, 167, 239, 0.7);
 }
@@ -1045,5 +1116,15 @@ label.section-lead {
 
   .testimonial-slide {
     padding: 1.15rem;
+  }
+
+  .cookie-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cookie-actions .btn-secondary,
+  .cookie-actions .btn-premium {
+    width: 100%;
   }
 }
