@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Contact | Azhuryel</title>
+    <title>Contact | Azhuryel Rebalance System</title>
 
     <meta
       name="description"
-      content="Book a free clarity call for Holistic Leadership Coaching. Designed for entrepreneurs, CEOs, founders, managers, freelancers and self-employed people who want sustainable success and real work-life balance."
+      content="Contact Stella Marrali to request a video call or ask a question. Holistic Leadership Coaching online for entrepreneurs, CEOs, founders, managers, freelancers and self-employed people worldwide."
     />
 
     <link
@@ -26,34 +26,53 @@
   </head>
 
   <body>
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="cookie-banner" style="display: none">
+      <div class="cookie-banner-inner">
+        <p class="cookie-title">Cookies</p>
+        <p class="cookie-text">
+          This website uses essential cookies to make core features work. We do
+          not use analytics or advertising cookies at this time. You can read
+          more in our Cookie Policy.
+        </p>
+        <div class="cookie-actions">
+          <a class="btn-secondary" href="cookies.html">Read Cookie Policy</a>
+          <button class="btn-secondary" id="cookie-essential">
+            Keep essential only
+          </button>
+          <button class="btn-premium" id="cookie-accept">Accept</button>
+        </div>
+      </div>
+    </div>
+
     <!-- Navigation -->
     <header class="navbar">
       <div class="navbar-left">
         <div class="brand-lockup">
           <a href="index.html" class="brand-name">Azhuryel</a>
           <span class="brand-payoff">
-            Elevate your soul, train your mind, transform your life.
+            Train your mind, elevate your soul, transform your life.
           </span>
         </div>
 
         <nav class="nav-links" aria-label="Primary">
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
             <li><a href="holistic-guidance.html">Holistic Guidance</a></li>
+            <li><a href="about.html">About</a></li>
             <li><a href="contact.html" class="active">Contact</a></li>
           </ul>
         </nav>
       </div>
 
-      <a href="contact.html" class="cta-btn">Book your free call</a>
+      <a href="quiz.html" class="cta-btn">Take the quiz</a>
 
       <button class="hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </header>
 
-    <!-- Hero -->
+    <!-- Hero Contact -->
     <section class="hero" id="contact-hero">
       <div class="hero-content">
         <img
@@ -65,10 +84,10 @@
         <h1 class="hero-title">Contact</h1>
 
         <p class="hero-subtitle">
-          Start with a free clarity call. This is for entrepreneurs, CEOs,
-          founders, managers, freelancers and self-employed people who want
-          sustainable success without burnout and a life that still feels like
-          theirs.
+          If you lead a business and your life feels squeezed into the
+          leftovers, you are in the right place. The fastest start is the quiz.
+          It helps you identify your current pressure pattern and share key
+          details so I can guide you clearly.
         </p>
 
         <div
@@ -80,36 +99,47 @@
             margin-top: 1rem;
           "
         >
-          <a href="#contact-form" class="btn-primary">Request your free call</a>
-          <a href="holistic-guidance.html" class="btn-secondary">
-            Explore Holistic Guidance
-          </a>
+          <a href="quiz.html" class="btn-primary">Take the quiz</a>
+          <a href="#contact-form" class="btn-secondary">Send a message</a>
         </div>
 
         <p class="hero-note">
-          Online coaching available worldwide. Your message is confidential and
-          answered personally.
+          Online guidance worldwide. If we schedule a call, it will be a video
+          meeting.
         </p>
       </div>
     </section>
 
-    <!-- Contact Form -->
+    <!-- Contact Form Section -->
     <section class="section" id="contact-form">
       <div class="container">
-        <h2 class="section-title">Request your free clarity call</h2>
+        <h2 class="section-title">Send a message</h2>
 
         <p class="section-lead">
-          We map your work-life pressure, your time structure and your energy
-          patterns. Then we choose your best next step.
+          You can contact me without taking the quiz. If you want a faster and
+          more personalised direction, take the quiz first.
         </p>
 
-        <form class="freebie-form" action="#" method="post" novalidate>
+        <form
+          class="freebie-form"
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          action="thank-you.html"
+          novalidate
+        >
+          <input type="hidden" name="form-name" value="contact" />
+          <p style="display: none">
+            <label>Don’t fill this out: <input name="bot-field" /></label>
+          </p>
+
           <input
             type="text"
-            name="name"
+            name="full_name"
             id="contact-name"
             class="freebie-input"
-            placeholder="Your full name"
+            placeholder="Full name"
             required
           />
 
@@ -118,7 +148,95 @@
             name="email"
             id="contact-email"
             class="freebie-input"
-            placeholder="Your email address"
+            placeholder="Email address"
+            required
+          />
+
+          <div class="phone-row" style="display: grid; gap: 0.75rem">
+            <select
+              name="phone_country_code"
+              class="freebie-input"
+              id="phone-country"
+              required
+            >
+              <option value="" selected disabled>Country code</option>
+              <option value="+1">United States / Canada (+1)</option>
+              <option value="+44">United Kingdom (+44)</option>
+              <option value="+47">Norway (+47)</option>
+              <option value="+39">Italy (+39)</option>
+              <option value="+49">Germany (+49)</option>
+              <option value="+33">France (+33)</option>
+              <option value="+34">Spain (+34)</option>
+              <option value="+31">Netherlands (+31)</option>
+              <option value="+46">Sweden (+46)</option>
+              <option value="+45">Denmark (+45)</option>
+              <option value="+41">Switzerland (+41)</option>
+              <option value="+43">Austria (+43)</option>
+              <option value="+351">Portugal (+351)</option>
+              <option value="+353">Ireland (+353)</option>
+              <option value="+48">Poland (+48)</option>
+              <option value="+358">Finland (+358)</option>
+              <option value="+36">Hungary (+36)</option>
+              <option value="+420">Czech Republic (+420)</option>
+              <option value="+40">Romania (+40)</option>
+              <option value="+30">Greece (+30)</option>
+              <option value="+90">Turkey (+90)</option>
+              <option value="+61">Australia (+61)</option>
+              <option value="+64">New Zealand (+64)</option>
+              <option value="+52">Mexico (+52)</option>
+              <option value="+55">Brazil (+55)</option>
+              <option value="+54">Argentina (+54)</option>
+              <option value="+56">Chile (+56)</option>
+              <option value="+57">Colombia (+57)</option>
+              <option value="+51">Peru (+51)</option>
+              <option value="+27">South Africa (+27)</option>
+              <option value="+971">United Arab Emirates (+971)</option>
+              <option value="+966">Saudi Arabia (+966)</option>
+              <option value="+20">Egypt (+20)</option>
+              <option value="+212">Morocco (+212)</option>
+              <option value="+234">Nigeria (+234)</option>
+              <option value="+254">Kenya (+254)</option>
+              <option value="+91">India (+91)</option>
+              <option value="+92">Pakistan (+92)</option>
+              <option value="+880">Bangladesh (+880)</option>
+              <option value="+94">Sri Lanka (+94)</option>
+              <option value="+81">Japan (+81)</option>
+              <option value="+82">South Korea (+82)</option>
+              <option value="+86">China (+86)</option>
+              <option value="+852">Hong Kong (+852)</option>
+              <option value="+65">Singapore (+65)</option>
+              <option value="+60">Malaysia (+60)</option>
+              <option value="+66">Thailand (+66)</option>
+              <option value="+84">Vietnam (+84)</option>
+              <option value="+62">Indonesia (+62)</option>
+              <option value="+63">Philippines (+63)</option>
+            </select>
+
+            <input
+              type="tel"
+              name="phone_number"
+              id="contact-phone"
+              class="freebie-input"
+              placeholder="Phone number"
+              required
+            />
+          </div>
+
+          <input
+            type="text"
+            name="role_or_title"
+            id="contact-role"
+            class="freebie-input"
+            placeholder="Your role or title (example: founder, CEO, manager)"
+            required
+          />
+
+          <input
+            type="text"
+            name="business_type"
+            id="contact-business"
+            class="freebie-input"
+            placeholder="Business type or industry"
             required
           />
 
@@ -126,8 +244,8 @@
             name="message"
             id="contact-message"
             class="freebie-input"
-            placeholder="Tell me what is happening right now. What feels heavy in your work-life balance? What do you want to feel instead? Include your time zone and a couple of preferred days."
-            rows="6"
+            placeholder="Tell me what is happening right now. What in your business feels out of control? What do you want to protect or rebuild in your private life? Include your time zone and a couple of preferred days if you want a video call."
+            rows="7"
             required
           ></textarea>
 
@@ -135,8 +253,8 @@
             class="section-lead"
             style="font-size: 0.95rem; display: block; text-align: left"
           >
-            <input type="checkbox" name="privacy" required />
-            I agree to the
+            <input type="checkbox" name="privacy_consent" required />
+            I have read and agree to the
             <a
               href="privacy.html"
               target="_blank"
@@ -151,19 +269,20 @@
             class="section-lead"
             style="font-size: 0.95rem; display: block; text-align: left"
           >
-            <input type="checkbox" name="newsletter" />
-            Yes, I want to receive updates and free resources.
+            <input type="checkbox" name="marketing_consent" />
+            Yes, I want to receive email and SMS updates, free resources and
+            offers from Azhuryel. I can unsubscribe anytime.
           </label>
 
           <button type="submit" class="btn-premium" style="margin-top: 1.2rem">
             Send message
           </button>
-        </form>
 
-        <p class="hero-note">
-          Tip: Share your time zone and preferred days and I will suggest a few
-          call options.
-        </p>
+          <p class="hero-note" style="margin-top: 0.75rem">
+            I reply personally. If you request a call, it will be a video
+            meeting.
+          </p>
+        </form>
       </div>
     </section>
 
@@ -190,14 +309,12 @@
           <article class="solution-card">
             <h3 class="solution-title">🌍 Availability</h3>
             <p class="solution-text">
-              Holistic Leadership Coaching is available worldwide via online
-              call.
+              Online guidance available worldwide. Calls are video meetings.
             </p>
           </article>
 
           <article class="solution-card">
             <h3 class="solution-title">✨ Social</h3>
-            <p class="solution-text">Coming soon.</p>
             <p class="solution-text" style="margin-bottom: 0">
               <a href="https://www.instagram.com/azhuryel/" target="_blank">
                 Instagram
@@ -208,44 +325,24 @@
       </div>
     </section>
 
-    <!-- Final CTA -->
-    <section class="footer-cta">
-      <h2>Ready to begin?</h2>
-      <p>Start with a free clarity call and get your next step.</p>
-
-      <a href="#contact-form" class="btn-premium">
-        Book your free clarity call
-      </a>
-
-      <p
-        style="
-          margin-top: 1rem;
-          font-family: var(--font-display);
-          color: var(--gold);
-        "
-      >
-        Balance • Growth • Energy
-        <br /><br />
-        Elevate your soul, train your mind, transform your life.
-      </p>
-    </section>
-
     <!-- Footer -->
     <footer class="footer">
       <div class="footer-container">
         <p class="footer-text">
-          © 2025 AZHURYEL | The Azhuryel Rebalance Path | All rights reserved |
-          Website made by: Coded_by_Stella.
+          © 2025 AZHURYEL | The Azhuryel Rebalance System | All rights reserved
+          | Website designed and developed by Stella Marrali.
         </p>
-        <p class="footer-tagline">Balance • Growth • Energy</p>
+
         <nav class="footer-nav">
           <a href="privacy.html">Privacy Policy</a>
           <a href="terms.html">Terms of Service</a>
+          <a href="cookies.html">Cookie Policy</a>
           <a href="contact.html">Contact</a>
         </nav>
       </div>
     </footer>
 
     <script src="src/script.js"></script>
+    <script src="src/consent.js"></script>
   </body>
 </html>

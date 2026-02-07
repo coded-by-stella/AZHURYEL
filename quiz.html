@@ -7,7 +7,7 @@
     <title>Rebalance Quiz | Azhuryel</title>
     <meta
       name="description"
-      content="Take the 2-minute Rebalance Quiz to understand your work-life pressure pattern as a leader and get a grounded next step for sustainable performance."
+      content="Take the 2-minute Rebalance Quiz to discover your leadership pressure pattern and share key details about your business and life. Get a grounded next step."
     />
     <link rel="canonical" href="https://azhuryel.com/quiz.html" />
 
@@ -25,27 +25,46 @@
   </head>
 
   <body>
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="cookie-banner" style="display: none">
+      <div class="cookie-banner-inner">
+        <p class="cookie-title">Cookies</p>
+        <p class="cookie-text">
+          This website uses essential cookies to make core features work. We do
+          not use analytics or advertising cookies at this time. You can read
+          more in our Cookie Policy.
+        </p>
+        <div class="cookie-actions">
+          <a class="btn-secondary" href="cookies.html">Read Cookie Policy</a>
+          <button class="btn-secondary" id="cookie-essential">
+            Keep essential only
+          </button>
+          <button class="btn-premium" id="cookie-accept">Accept</button>
+        </div>
+      </div>
+    </div>
+
     <!-- Navigation -->
     <header class="navbar">
       <div class="navbar-left">
         <div class="brand-lockup">
           <a href="index.html" class="brand-name">Azhuryel</a>
           <span class="brand-payoff">
-            Elevate your soul, train your mind, transform your life.
+            Train your mind, elevate your soul, transform your life.
           </span>
         </div>
 
         <nav class="nav-links" aria-label="Primary">
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
             <li><a href="holistic-guidance.html">Holistic Guidance</a></li>
+            <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
       </div>
 
-      <a href="contact.html" class="cta-btn">Book your free call</a>
+      <a href="quiz.html" class="cta-btn">Take the quiz</a>
 
       <button class="hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -63,39 +82,472 @@
 
         <h1 class="hero-title">The 2-minute Rebalance Quiz</h1>
         <p class="hero-subtitle">
-          For entrepreneurs, CEOs, founders, managers, freelancers and
-          self-employed people. Understand your work-life pressure pattern and
-          get a grounded next step for sustainable performance.
+          Identify your leadership pressure pattern and share what you are
+          carrying right now so you can get a grounded next step.
         </p>
 
-        <p class="hero-note">This is not a diagnosis. It is a clarity tool.</p>
+        <p class="hero-note">
+          This is not a diagnosis. It is a clarity tool for entrepreneurs, CEOs,
+          founders, managers, freelancers and self-employed people.
+        </p>
 
-        <a href="#quiz" class="btn-primary">Start the quiz</a>
+        <a href="#quiz" class="btn-primary">Start</a>
       </div>
     </section>
 
     <!-- QUIZ -->
     <section class="section" id="quiz">
       <div class="container">
-        <h2 class="section-title">Answer a few quick questions</h2>
+        <h2 class="section-title">First, a few quick context questions</h2>
 
         <p class="section-lead" style="text-align: left">
-          This quiz helps you understand how pressure shows up in your time,
-          your energy and your inner world. There are no right or wrong answers.
-          Answer honestly.
+          These help me understand your business reality so I can guide you
+          clearly if you request a video call. Then you will answer 8 quick
+          pattern questions.
         </p>
 
-        <form id="rebalance-quiz" class="freebie-form" novalidate>
-          <!-- Questions unchanged from your previous version for compatibility -->
-          <!-- Keep your existing fieldsets here if you already have them -->
-          <!-- If you want me to paste the full 8 questions again I can, but the logic stays identical -->
-          <p class="section-lead" style="text-align: left">
-            Use the same 8 questions you already have in your file. The result
-            logic is handled by src/quiz.js.
+        <!-- Netlify form (single form captures everything) -->
+        <form
+          id="rebalance-quiz"
+          class="freebie-form"
+          name="quiz-leads"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          action="thank-you.html"
+          novalidate
+        >
+          <input type="hidden" name="form-name" value="quiz-leads" />
+          <p style="display: none">
+            <label>Don’t fill this out: <input name="bot-field" /></label>
           </p>
 
+          <fieldset class="solution-card" style="text-align: left">
+            <legend class="solution-title">Your details</legend>
+
+            <input
+              type="text"
+              name="full_name"
+              class="freebie-input"
+              placeholder="Full name"
+              required
+            />
+
+            <input
+              type="email"
+              name="email"
+              id="quiz-email"
+              class="freebie-input"
+              placeholder="Email address"
+              required
+            />
+
+            <div style="display: grid; gap: 0.75rem">
+              <select name="phone_country_code" class="freebie-input" required>
+                <option value="" selected disabled>Country code</option>
+                <option value="+1">United States / Canada (+1)</option>
+                <option value="+44">United Kingdom (+44)</option>
+                <option value="+47">Norway (+47)</option>
+                <option value="+39">Italy (+39)</option>
+                <option value="+49">Germany (+49)</option>
+                <option value="+33">France (+33)</option>
+                <option value="+34">Spain (+34)</option>
+                <option value="+31">Netherlands (+31)</option>
+                <option value="+46">Sweden (+46)</option>
+                <option value="+45">Denmark (+45)</option>
+                <option value="+41">Switzerland (+41)</option>
+                <option value="+43">Austria (+43)</option>
+                <option value="+351">Portugal (+351)</option>
+                <option value="+353">Ireland (+353)</option>
+                <option value="+48">Poland (+48)</option>
+                <option value="+358">Finland (+358)</option>
+                <option value="+36">Hungary (+36)</option>
+                <option value="+420">Czech Republic (+420)</option>
+                <option value="+40">Romania (+40)</option>
+                <option value="+30">Greece (+30)</option>
+                <option value="+90">Turkey (+90)</option>
+                <option value="+61">Australia (+61)</option>
+                <option value="+64">New Zealand (+64)</option>
+                <option value="+52">Mexico (+52)</option>
+                <option value="+55">Brazil (+55)</option>
+                <option value="+27">South Africa (+27)</option>
+                <option value="+971">United Arab Emirates (+971)</option>
+                <option value="+91">India (+91)</option>
+              </select>
+
+              <input
+                type="tel"
+                name="phone_number"
+                class="freebie-input"
+                placeholder="Phone number"
+                required
+              />
+            </div>
+
+            <input
+              type="text"
+              name="role_or_title"
+              class="freebie-input"
+              placeholder="Your role or title (example: CEO, founder, manager)"
+              required
+            />
+
+            <input
+              type="text"
+              name="business_type"
+              class="freebie-input"
+              placeholder="Business type or industry"
+              required
+            />
+          </fieldset>
+
+          <fieldset class="solution-card" style="text-align: left">
+            <legend class="solution-title">Context</legend>
+
+            <label class="section-lead" style="display: block">
+              1) What is the biggest pressure in your business right now?
+              <textarea
+                name="context_business_pressure"
+                class="freebie-input"
+                rows="4"
+                placeholder="Example: constant client demands, team issues, cash flow stress, overbooking, nonstop emergencies"
+                required
+              ></textarea>
+            </label>
+
+            <label class="section-lead" style="display: block">
+              2) What is suffering most in your private life because of work?
+              <textarea
+                name="context_private_life_cost"
+                class="freebie-input"
+                rows="4"
+                placeholder="Example: relationship, family time, sleep, health, joy, friendships, presence"
+                required
+              ></textarea>
+            </label>
+
+            <label class="section-lead" style="display: block">
+              3) What have you already tried that did not fully solve it?
+              <textarea
+                name="context_tried_before"
+                class="freebie-input"
+                rows="4"
+                placeholder="Example: time management courses, hiring help, meditation, therapy, planners, retreats"
+                required
+              ></textarea>
+            </label>
+
+            <label class="section-lead" style="display: block">
+              4) If your week felt balanced again, what would be different?
+              <textarea
+                name="context_desired_outcome"
+                class="freebie-input"
+                rows="4"
+                placeholder="Example: I stop working at a clear time, I have dinner with my partner, I sleep deeply, I delegate, I feel calm while leading"
+                required
+              ></textarea>
+            </label>
+
+            <label class="section-lead" style="display: block">
+              5) Time zone (for a video call if you request one)
+              <input
+                type="text"
+                name="context_time_zone"
+                class="freebie-input"
+                placeholder="Example: CET, GMT+1, EST"
+                required
+              />
+            </label>
+
+            <label class="section-lead" style="display: block">
+              6) Preferred days for a video call
+              <input
+                type="text"
+                name="context_preferred_days"
+                class="freebie-input"
+                placeholder="Example: Tue or Thu afternoon"
+                required
+              />
+            </label>
+          </fieldset>
+
+          <h2 class="section-title" style="margin-top: 1.5rem">
+            Now the 8 pattern questions
+          </h2>
+
+          <p class="section-lead" style="text-align: left">
+            There are no right or wrong answers. Notice what resonates and
+            answer honestly.
+          </p>
+
+          <fieldset class="solution-card" style="text-align: left">
+            <legend class="solution-title">
+              1) When pressure increases in your business, what happens first?
+            </legend>
+
+            <label class="section-lead" style="display: block">
+              <input type="radio" name="q1" value="HYPER" required />
+              A. My body tenses up and my mind speeds up. I stay alert even when
+              nothing is urgent.
+            </label>
+
+            <label class="section-lead" style="display: block">
+              <input type="radio" name="q1" value="HOLDER" />
+              B. I take on even more responsibility and try to hold everything
+              together.
+            </label>
+
+            <label class="section-lead" style="display: block">
+              <input type="radio" name="q1" value="CYCLICAL" />
+              C. I push hard for a while, then suddenly feel exhausted or shut
+              down.
+            </label>
+
+            <label class="section-lead" style="display: block">
+              <input type="radio" name="q1" value="DISCONNECTED" />
+              D. I keep functioning, but I feel emotionally distant from what I
+              am doing.
+            </label>
+          </fieldset>
+
+          <fieldset class="solution-card" style="text-align: left">
+            <legend class="solution-title">
+              2) How does rest usually feel?
+            </legend>
+
+            <label class="section-lead" style="display: block">
+              <input type="radio" name="q2" value="HYPER" required />
+              A. I try to rest, but my body stays tense and my thoughts keep
+              running.
+            </label>
+
+            <label class="section-lead" style="display: block">
+              <input type="radio" name="q2" value="HOLDER" />
+              B. Rest feels deserved only after everything is done. It is hard
+              to allow it.
+            </label>
+
+            <label class="section-lead" style="display: block">
+              <input type="radio" name="q2" value="CYCLICAL" />
+              C. Rest helps for a short time, then I am drained again.
+            </label>
+
+            <label class="section-lead" style="display: block">
+              <input type="radio" name="q2" value="DISCONNECTED" />
+              D. I rest physically, but I do not really feel restored or
+              present.
+            </label>
+          </fieldset>
+
+          <fieldset class="solution-card" style="text-align: left">
+            <legend class="solution-title">
+              3) When you think about responsibility, what feels closest?
+            </legend>
+
+            <label class="section-lead" style="display: block">
+              <input type="radio" name="q3" value="HYPER" required />
+              A. I am always on. Switching off feels unsafe.
+            </label>
+
+            <label class="section-lead" style="display: block">
+              <input type="radio" name="q3" value="HOLDER" />
+              B. If I do not take care of things, they will fall apart.
+            </label>
+
+            <label class="section-lead" style="display: block">
+              <input type="radio" name="q3" value="CYCLICAL" />
+              C. I go through intense phases followed by crashes.
+            </label>
+
+            <label class="section-lead" style="display: block">
+              <input type="radio" name="q3" value="DISCONNECTED" />
+              D. I do what needs to be done, but without emotional connection.
+            </label>
+          </fieldset>
+
+          <fieldset class="solution-card" style="text-align: left">
+            <legend class="solution-title">
+              4) How do you usually make decisions under pressure?
+            </legend>
+
+            <label class="section-lead" style="display: block">
+              <input type="radio" name="q4" value="HYPER" required />
+              A. Quickly, but with a lot of inner tension.
+            </label>
+
+            <label class="section-lead" style="display: block">
+              <input type="radio" name="q4" value="HOLDER" />
+              B. Carefully, thinking about everyone involved before myself.
+            </label>
+
+            <label class="section-lead" style="display: block">
+              <input type="radio" name="q4" value="CYCLICAL" />
+              C. In bursts. I decide a lot at once, then avoid decisions.
+            </label>
+
+            <label class="section-lead" style="display: block">
+              <input type="radio" name="q4" value="DISCONNECTED" />
+              D. Rationally and efficiently, even if I feel disconnected inside.
+            </label>
+          </fieldset>
+
+          <fieldset class="solution-card" style="text-align: left">
+            <legend class="solution-title">
+              5) What happens when you slow down or stop working?
+            </legend>
+
+            <label class="section-lead" style="display: block">
+              <input type="radio" name="q5" value="HYPER" required />
+              A. I feel restless. My system stays alert.
+            </label>
+
+            <label class="section-lead" style="display: block">
+              <input type="radio" name="q5" value="HOLDER" />
+              B. Guilt appears. I feel like I should be doing more.
+            </label>
+
+            <label class="section-lead" style="display: block">
+              <input type="radio" name="q5" value="CYCLICAL" />
+              C. Relief first, then emptiness or fatigue.
+            </label>
+
+            <label class="section-lead" style="display: block">
+              <input type="radio" name="q5" value="DISCONNECTED" />
+              D. I notice how numb or distant I feel.
+            </label>
+          </fieldset>
+
+          <fieldset class="solution-card" style="text-align: left">
+            <legend class="solution-title">
+              6) Which pattern has repeated most in your work life?
+            </legend>
+
+            <label class="section-lead" style="display: block">
+              <input type="radio" name="q6" value="HYPER" required />
+              A. High performance with constant tension in my body.
+            </label>
+
+            <label class="section-lead" style="display: block">
+              <input type="radio" name="q6" value="HOLDER" />
+              B. Carrying more than others expect of me.
+            </label>
+
+            <label class="section-lead" style="display: block">
+              <input type="radio" name="q6" value="CYCLICAL" />
+              C. Motivation cycles that are hard to stabilise.
+            </label>
+
+            <label class="section-lead" style="display: block">
+              <input type="radio" name="q6" value="DISCONNECTED" />
+              D. Achieving things without feeling real satisfaction.
+            </label>
+          </fieldset>
+
+          <fieldset class="solution-card" style="text-align: left">
+            <legend class="solution-title">
+              7) How do you relate to control?
+            </legend>
+
+            <label class="section-lead" style="display: block">
+              <input type="radio" name="q7" value="HYPER" required />
+              A. I need to stay in control to feel safe.
+            </label>
+
+            <label class="section-lead" style="display: block">
+              <input type="radio" name="q7" value="HOLDER" />
+              B. I feel responsible for outcomes, even when they are not fully
+              mine.
+            </label>
+
+            <label class="section-lead" style="display: block">
+              <input type="radio" name="q7" value="CYCLICAL" />
+              C. I oscillate between control and letting go completely.
+            </label>
+
+            <label class="section-lead" style="display: block">
+              <input type="radio" name="q7" value="DISCONNECTED" />
+              D. I stay in control externally, even if I feel disconnected
+              inside.
+            </label>
+          </fieldset>
+
+          <fieldset class="solution-card" style="text-align: left">
+            <legend class="solution-title">
+              8) What are you most longing for right now?
+            </legend>
+
+            <label class="section-lead" style="display: block">
+              <input type="radio" name="q8" value="HYPER" required />
+              A. Calm in my body and clarity in my mind.
+            </label>
+
+            <label class="section-lead" style="display: block">
+              <input type="radio" name="q8" value="HOLDER" />
+              B. Support and shared responsibility.
+            </label>
+
+            <label class="section-lead" style="display: block">
+              <input type="radio" name="q8" value="CYCLICAL" />
+              C. A rhythm that does not burn me out.
+            </label>
+
+            <label class="section-lead" style="display: block">
+              <input type="radio" name="q8" value="DISCONNECTED" />
+              D. Feeling present and alive again.
+            </label>
+          </fieldset>
+
+          <!-- Hidden result fields -->
+          <input
+            type="hidden"
+            name="quiz_profile"
+            id="quiz-profile-hidden"
+            value=""
+          />
+          <input
+            type="hidden"
+            name="quiz_result_title"
+            id="quiz-title-hidden"
+            value=""
+          />
+          <input
+            type="hidden"
+            name="quiz_result_description"
+            id="quiz-desc-hidden"
+            value=""
+          />
+          <input
+            type="hidden"
+            name="quiz_result_nextstep"
+            id="quiz-next-hidden"
+            value=""
+          />
+
+          <label
+            class="section-lead"
+            style="font-size: 0.95rem; display: block; text-align: left"
+          >
+            <input type="checkbox" name="privacy_consent" required />
+            I have read and agree to the
+            <a
+              href="privacy.html"
+              target="_blank"
+              style="text-decoration: underline"
+              >Privacy Policy</a
+            >.
+          </label>
+
+          <label
+            class="section-lead"
+            style="font-size: 0.95rem; display: block; text-align: left"
+          >
+            <input type="checkbox" name="marketing_consent" />
+            Yes, I want to receive email and SMS updates, free resources and
+            offers. I can unsubscribe anytime.
+          </label>
+
           <button type="submit" class="btn-premium" style="margin-top: 1rem">
-            Get my result
+            Submit and get my next step
           </button>
 
           <p
@@ -103,102 +555,17 @@
             class="hero-note"
             style="display: none; margin-top: 0.75rem"
           >
-            Please answer all questions before continuing.
+            Please answer all required questions before continuing.
+          </p>
+
+          <p class="hero-note" style="margin-top: 0.75rem">
+            After you submit, your result is saved with your form and I will
+            guide you to the best next step.
           </p>
         </form>
 
-        <!-- EMAIL GATE -->
-        <div
-          id="email-gate"
-          class="solution-card"
-          style="display: none; margin-top: 1.25rem; text-align: left"
-        >
-          <h3 class="solution-title">Your result is ready</h3>
-          <p class="section-lead" style="margin-top: 0.5rem">
-            Enter your email to receive your result and your next step.
-          </p>
-
-          <form
-            id="quiz-lead-form"
-            name="quiz-leads"
-            method="POST"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
-            action="thank-you.html"
-            class="freebie-form"
-            style="margin-top: 0.75rem"
-          >
-            <input type="hidden" name="form-name" value="quiz-leads" />
-            <p style="display: none">
-              <label>Don’t fill this out: <input name="bot-field" /></label>
-            </p>
-
-            <input
-              type="email"
-              name="email"
-              id="quiz-email"
-              class="freebie-input"
-              placeholder="Your email address"
-              required
-            />
-
-            <input
-              type="hidden"
-              name="quiz_profile"
-              id="quiz-profile-hidden"
-              value=""
-            />
-            <input
-              type="hidden"
-              name="quiz_result_title"
-              id="quiz-title-hidden"
-              value=""
-            />
-            <input
-              type="hidden"
-              name="quiz_result_description"
-              id="quiz-desc-hidden"
-              value=""
-            />
-            <input
-              type="hidden"
-              name="quiz_result_nextstep"
-              id="quiz-next-hidden"
-              value=""
-            />
-
-            <label
-              class="section-lead"
-              style="font-size: 0.95rem; display: block; text-align: left"
-            >
-              <input type="checkbox" name="privacy" required />
-              I agree to the
-              <a
-                href="privacy.html"
-                target="_blank"
-                style="text-decoration: underline"
-              >
-                Privacy Policy
-              </a>
-              .
-            </label>
-
-            <button type="submit" class="btn-premium" style="margin-top: 1rem">
-              Email me my result
-            </button>
-
-            <p class="hero-note" style="margin-top: 0.75rem">
-              Your email is confidential and never shared.
-            </p>
-          </form>
-
-          <p class="hero-note" style="margin-top: 0.75rem">
-            After you submit, please check your inbox and spam folder.
-          </p>
-        </div>
-
         <a href="contact.html" class="btn-secondary" style="margin-top: 1rem">
-          Prefer to talk instead? Book your free clarity call
+          Prefer to contact directly? Go to Contact
         </a>
       </div>
     </section>
@@ -207,19 +574,20 @@
     <footer class="footer">
       <div class="footer-container">
         <p class="footer-text">
-          © 2025 AZHURYEL | All rights reserved | Website made by:
-          Coded_by_Stella.
+          © 2025 AZHURYEL | The Azhuryel Rebalance System | All rights reserved
+          | Website designed and developed by Stella Marrali.
         </p>
-        <p class="footer-tagline">Balance • Growth • Energy</p>
         <nav class="footer-nav">
           <a href="privacy.html">Privacy Policy</a>
           <a href="terms.html">Terms of Service</a>
+          <a href="cookies.html">Cookie Policy</a>
           <a href="contact.html">Contact</a>
         </nav>
       </div>
     </footer>
 
     <script src="src/script.js"></script>
+    <script src="src/consent.js"></script>
     <script src="src/quiz.js"></script>
   </body>
 </html>

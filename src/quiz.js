@@ -1,89 +1,92 @@
 (function () {
-  const quizForm = document.getElementById("rebalance-quiz");
-  if (!quizForm) return;
+  const form = document.getElementById("rebalance-quiz");
+  if (!form) return;
 
   const errorEl = document.getElementById("quiz-error");
-  const emailGate = document.getElementById("email-gate");
 
-  const hiddenProfileEl = document.getElementById("quiz-profile-hidden");
-  const hiddenTitleEl = document.getElementById("quiz-title-hidden");
-  const hiddenDescEl = document.getElementById("quiz-desc-hidden");
-  const hiddenNextEl = document.getElementById("quiz-next-hidden");
+  const hiddenProfile = document.getElementById("quiz-profile-hidden");
+  const hiddenTitle = document.getElementById("quiz-title-hidden");
+  const hiddenDesc = document.getElementById("quiz-desc-hidden");
+  const hiddenNext = document.getElementById("quiz-next-hidden");
 
-  const profiles = {
-    HYPER: {
-      title: "Your result: The Always-On Leader",
-      description:
-        "You can lead and deliver, but your system stays on alert. Your mind keeps scanning and your body holds tension. This is not weakness. It is a nervous system trained for constant responsibility.",
-      nextStep:
-        "Next step: stabilise your nervous system first, then restructure your time. We build a daily downshift ritual and a clean calendar standard so you can switch off without guilt.",
-    },
-    HOLDER: {
-      title: "Your result: The Over-Responsible Holder",
-      description:
-        "You carry more than your share. You anticipate problems and protect outcomes. Rest often triggers guilt, and delegation can feel unsafe. Over time the business starts consuming the person.",
-      nextStep:
-        "Next step: choose one responsibility to release this week and define one boundary that protects your private life. We then build a delegation map and belief work to end the “I must” loop.",
-    },
-    CYCLICAL: {
-      title: "Your result: The Burnout Cycle Pattern",
-      description:
-        "You perform in intense bursts, then crash or shut down. This often happens when urgency fuels output and recovery is not truly built into your system.",
-      nextStep:
-        "Next step: rebuild rhythm before pushing for more performance. We design your week structure, your energy rules and your stop points so your success stops requiring collapse.",
-    },
-    DISCONNECTED: {
-      title: "Your result: The Disconnected Performer",
-      description:
-        "You function and achieve, but it does not land emotionally. This is often what happens when the system adapts by numbing to keep going under pressure.",
-      nextStep:
-        "Next step: restore presence safely, then restructure the workload. We use regulation tools and gentle reconnection practices while redesigning your calendar to create space for real life again.",
-    },
-  };
-
-  function calculateResult() {
-    const counts = { HYPER: 0, HOLDER: 0, CYCLICAL: 0, DISCONNECTED: 0 };
-    const data = new FormData(quizForm);
-
-    for (let i = 1; i <= 8; i++) {
-      const v = data.get(`q${i}`);
-      if (!v) return null;
-      counts[v] += 1;
-    }
-
-    let winner = "HYPER";
-    let max = -1;
-
-    for (const key of Object.keys(counts)) {
-      if (counts[key] > max) {
-        max = counts[key];
-        winner = key;
-      }
-    }
-
-    return { profile: winner, ...profiles[winner] };
+  function getAnswerValue(name) {
+    const checked = form.querySelector(`input[name="${name}"]:checked`);
+    return checked ? checked.value : null;
   }
 
-  quizForm.addEventListener("submit", function (e) {
-    e.preventDefault();
+  function computeProfile() {
+    const counts = {
+      HYPER: 0,
+      HOLDER: 0,
+      CYCLICAL: 0,
+      DISCONNECTED: 0,
+    };
 
-    const res = calculateResult();
-    if (!res) {
+    for (let i = 1; i <= 8; i++) {
+      const v = getAnswerValue(`q${i}`);
+      if (v && counts[v] !== undefined) counts[v] += 1;
+    }
+
+    let bestKey = "HYPER";
+    let bestVal = -1;
+
+    Object.keys(counts).forEach((k) => {
+      if (counts[k] > bestVal) {
+        bestVal = counts[k];
+        bestKey = k;
+      }
+    });
+
+    return bestKey;
+  }
+
+  function profileCopy(profile) {
+    const map = {
+      HYPER: {
+        title: "The Hyper Alert Leader",
+        desc: "Your system stays on guard even when work is done.You carry tension in your body and speed in your mind.Rest does not fully restore you because your nervous system is still scanning for what could go wrong.",
+        next: "Next step: rebuild calm focus through nervous system regulation and clean calendar boundaries so your body learns safety again.",
+      },
+      HOLDER: {
+        title: "The Responsibility Holder",
+        desc: "You hold everything together.You take care of people, outcomes, and details, often before yourself.Rest can feel undeserved because your mind is still carrying the load.",
+        next: "Next step: build delegation, boundaries, and leadership structure while releasing the belief that everything depends on you.",
+      },
+      CYCLICAL: {
+        title: "The Sprint and Crash Leader",
+        desc: "You can push hard and deliver, then your energy drops.You move through intense effort cycles followed by shutdown, fatigue, or avoidance.This pattern burns motivation and makes life feel unstable.",
+        next: "Next step: create a sustainable weekly rhythm and stabilise energy with structure and spiritual regulation practices.",
+      },
+      DISCONNECTED: {
+        title: "The Disconnected Achiever",
+        desc: "You keep performing but you feel distant inside.Achievements do not feel satisfying and presence is hard to access.This often happens when pressure has been running for too long without real recovery.",
+        next: "Next step: restore emotional connection and vitality while rebuilding boundaries that protect your private life.",
+      },
+    };
+
+    return map[profile] || map.HYPER;
+  }
+
+  function fillHiddenFields() {
+    const profile = computeProfile();
+    const copy = profileCopy(profile);
+
+    if (hiddenProfile) hiddenProfile.value = profile;
+    if (hiddenTitle) hiddenTitle.value = copy.title;
+    if (hiddenDesc) hiddenDesc.value = copy.desc;
+    if (hiddenNext) hiddenNext.value = copy.next;
+  }
+
+  form.addEventListener("submit", (e) => {
+    if (errorEl) errorEl.style.display = "none";
+
+    if (!form.checkValidity()) {
+      e.preventDefault();
       if (errorEl) errorEl.style.display = "block";
-      if (emailGate) emailGate.style.display = "none";
+      form.reportValidity();
       return;
     }
 
-    if (errorEl) errorEl.style.display = "none";
-
-    if (hiddenProfileEl) hiddenProfileEl.value = res.profile;
-    if (hiddenTitleEl) hiddenTitleEl.value = res.title;
-    if (hiddenDescEl) hiddenDescEl.value = res.description;
-    if (hiddenNextEl) hiddenNextEl.value = res.nextStep;
-
-    if (emailGate) {
-      emailGate.style.display = "block";
-      emailGate.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    fillHiddenFields();
   });
 })();

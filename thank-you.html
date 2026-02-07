@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Thank you | Azhuryel</title>
-    <meta name="description" content="Thank you. Your result is on the way." />
+    <meta name="description" content="Thank you. Your request was received." />
     <link rel="stylesheet" href="src/style.css" />
     <link
       rel="icon"
@@ -15,16 +15,35 @@
   </head>
 
   <body>
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="cookie-banner" style="display: none">
+      <div class="cookie-banner-inner">
+        <p class="cookie-title">Cookies</p>
+        <p class="cookie-text">
+          This website uses essential cookies to make core features work. We do
+          not use analytics or advertising cookies at this time. You can read
+          more in our Cookie Policy.
+        </p>
+        <div class="cookie-actions">
+          <a class="btn-secondary" href="cookies.html">Read Cookie Policy</a>
+          <button class="btn-secondary" id="cookie-essential">
+            Keep essential only
+          </button>
+          <button class="btn-premium" id="cookie-accept">Accept</button>
+        </div>
+      </div>
+    </div>
+
     <header class="navbar">
       <div class="navbar-left">
         <div class="brand-lockup">
           <a href="index.html" class="brand-name">Azhuryel</a>
           <span class="brand-payoff">
-            Elevate your soul, train your mind, transform your life.
+            Train your mind, elevate your soul, transform your life.
           </span>
         </div>
       </div>
-      <a href="contact.html" class="cta-btn">Book your free call</a>
+      <a href="quiz.html" class="cta-btn">Take the quiz</a>
     </header>
 
     <section class="hero">
@@ -36,11 +55,11 @@
         />
         <h1 class="hero-title">Thank you</h1>
         <p class="hero-subtitle">
-          Your request was received successfully. Your result is saved and you
-          will hear from me soon.
+          Your message was received successfully. I will reply personally.
         </p>
         <p class="hero-note">
-          If you want personal guidance, the next step is a free clarity call.
+          If you requested a call, it will be a video meeting. If you did not
+          take the quiz yet, it is the fastest way to get a clear next step.
         </p>
 
         <div
@@ -52,9 +71,7 @@
             margin-top: 1rem;
           "
         >
-          <a href="contact.html" class="btn-primary"
-            >Book your free clarity call</a
-          >
+          <a href="quiz.html" class="btn-primary">Take the quiz</a>
           <a href="index.html" class="btn-secondary">Back to Home</a>
         </div>
       </div>
@@ -62,8 +79,13 @@
 
     <footer class="footer">
       <div class="footer-container">
-        <p class="footer-text">© 2025 AZHURYEL | All rights reserved</p>
+        <p class="footer-text">
+          © 2025 AZHURYEL | All rights reserved | Website designed and developed
+          by Stella Marrali.
+        </p>
       </div>
     </footer>
+
+    <script src="src/consent.js"></script>
   </body>
 </html>
