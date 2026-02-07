@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       slides.forEach((_, i) => {
         const dot = document.createElement("span");
-        dot.classList.add("dot");
+        dot.classList.add("dot", "carousel-dot"); // supports both CSS styles
         dot.addEventListener("click", () => {
           currentSlide = i;
           showSlide(currentSlide);
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const updateDots = () => {
       if (!dotsContainer) return;
-      const dots = dotsContainer.querySelectorAll(".dot");
+      const dots = dotsContainer.querySelectorAll(".dot, .carousel-dot");
       dots.forEach((dot, i) => {
         dot.classList.toggle("active", i === currentSlide);
       });
@@ -102,6 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const openMenu = () => {
       navLinks.classList.add("active");
+      navLinks.classList.add("open"); // supports my alternative CSS naming
       setExpanded(hamburger, true);
       document.body.style.overflow = "hidden";
       if (ctaBtn) ctaBtn.style.visibility = "hidden";
@@ -109,13 +110,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const closeMenu = () => {
       navLinks.classList.remove("active");
+      navLinks.classList.remove("open"); // supports my alternative CSS naming
       setExpanded(hamburger, false);
       document.body.style.overflow = "";
       if (ctaBtn) ctaBtn.style.visibility = "";
     };
 
     hamburger.addEventListener("click", () => {
-      if (navLinks.classList.contains("active")) {
+      if (
+        navLinks.classList.contains("active") ||
+        navLinks.classList.contains("open")
+      ) {
         closeMenu();
       } else {
         openMenu();
@@ -127,7 +132,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     window.addEventListener("resize", () => {
-      if (window.innerWidth > 900 && navLinks.classList.contains("active")) {
+      if (
+        window.innerWidth > 900 &&
+        (navLinks.classList.contains("active") ||
+          navLinks.classList.contains("open"))
+      ) {
         closeMenu();
       }
     });

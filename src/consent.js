@@ -1,7 +1,7 @@
 (function () {
   const KEY = "azhuryel_cookie_consent_v1";
 
-  function getConsent() {
+  function readConsent() {
     try {
       return localStorage.getItem(KEY);
     } catch {
@@ -9,7 +9,7 @@
     }
   }
 
-  function setConsent(value) {
+  function writeConsent(value) {
     try {
       localStorage.setItem(KEY, value);
     } catch {
@@ -20,24 +20,27 @@
   const banner = document.getElementById("cookie-banner");
   if (!banner) return;
 
-  const consent = getConsent();
+  const essentialBtn = document.getElementById("cookie-essential");
+  const acceptBtn = document.getElementById("cookie-accept");
+
+  const consent = readConsent();
+
   if (!consent) {
     banner.style.display = "block";
-  }
-
-  const btnEssential = document.getElementById("cookie-essential");
-  const btnAccept = document.getElementById("cookie-accept");
-
-  function closeBanner(choice) {
-    setConsent(choice);
+  } else {
     banner.style.display = "none";
   }
 
-  if (btnEssential) {
-    btnEssential.addEventListener("click", () => closeBanner("essential"));
+  function close(choice) {
+    writeConsent(choice);
+    banner.style.display = "none";
   }
 
-  if (btnAccept) {
-    btnAccept.addEventListener("click", () => closeBanner("accepted"));
+  if (essentialBtn) {
+    essentialBtn.addEventListener("click", () => close("essential"));
+  }
+
+  if (acceptBtn) {
+    acceptBtn.addEventListener("click", () => close("accepted"));
   }
 })();
