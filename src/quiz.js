@@ -12,32 +12,32 @@
 
   const profiles = {
     HYPER: {
-      title: "Your result: The Hyper-Activated Leader",
+      title: "Your result: The Always-On Leader",
       description:
-        "You can lead, decide and perform, but your system stays on high alert. Even when nothing is urgent, your body carries tension and your mind keeps scanning. This is not weakness. It is a nervous system that learned to stay ready.",
+        "You can lead and deliver, but your system stays on alert. Your mind keeps scanning and your body holds tension. This is not weakness. It is a nervous system trained for constant responsibility.",
       nextStep:
-        "Grounded next step: build a short daily downshift ritual that teaches your body safety again. We start by regulating first, then we work on the pressure loop that keeps you in permanent alert.",
+        "Next step: stabilise your nervous system first, then restructure your time. We build a daily downshift ritual and a clean calendar standard so you can switch off without guilt.",
     },
     HOLDER: {
-      title: "Your result: The Responsible Holder",
+      title: "Your result: The Over-Responsible Holder",
       description:
-        "You are the person who carries more than your share. You anticipate problems, protect outcomes and often take responsibility for everyone’s stability. Over time, this can turn rest into guilt and support into discomfort.",
+        "You carry more than your share. You anticipate problems and protect outcomes. Rest often triggers guilt, and delegation can feel unsafe. Over time the business starts consuming the person.",
       nextStep:
-        "Grounded next step: identify the responsibility pattern you are over-holding and practice one clean boundary this week. We work on nervous system safety, emotional release and sustainable leadership support.",
+        "Next step: choose one responsibility to release this week and define one boundary that protects your private life. We then build a delegation map and belief work to end the “I must” loop.",
     },
     CYCLICAL: {
-      title: "Your result: The Cyclical Burner",
+      title: "Your result: The Burnout Cycle Pattern",
       description:
-        "Your energy and motivation move in waves. You can enter intense focus and then crash, avoid or feel emptied out. This often happens when your system relies on urgency to perform and collapses when urgency disappears.",
+        "You perform in intense bursts, then crash or shut down. This often happens when urgency fuels output and recovery is not truly built into your system.",
       nextStep:
-        "Grounded next step: rebuild rhythm before pushing for more output. We start with micro-structures that stabilize your baseline so your work stops requiring burnout to happen.",
+        "Next step: rebuild rhythm before pushing for more performance. We design your week structure, your energy rules and your stop points so your success stops requiring collapse.",
     },
     DISCONNECTED: {
       title: "Your result: The Disconnected Performer",
       description:
-        "You function, deliver and stay in control, but something feels emotionally distant. Achievements may not land inside you. This is often what happens when the system adapts by numbing to keep going.",
+        "You function and achieve, but it does not land emotionally. This is often what happens when the system adapts by numbing to keep going under pressure.",
       nextStep:
-        "Grounded next step: restore presence through gentle reconnection practices that feel safe, not forced. We work on regulation, emotional access and energetic coherence so life feels like yours again.",
+        "Next step: restore presence safely, then restructure the workload. We use regulation tools and gentle reconnection practices while redesigning your calendar to create space for real life again.",
     },
   };
 
