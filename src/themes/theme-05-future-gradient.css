@@ -1,0 +1,94 @@
+/* theme-05-future-gradient.css */
+:root {
+  --ink: #0a1022;
+  --muted: rgba(10, 16, 34, 0.7);
+  --line: rgba(10, 16, 34, 0.12);
+  --surface: #ffffff;
+  --bg: #f6f8ff;
+
+  --violet: #9a7bff;
+  --violet-700: #7f5eff;
+  --blue: #11a7ef;
+  --blue-700: #0e86c3;
+
+  --gold: #ffd166;
+
+  --cta: #2563eb; /* electric blue CTA = decisive, modern */
+  --cta-700: #1d4ed8;
+
+  --focus: 0 0 0 4px rgba(17, 167, 239, 0.22);
+}
+
+.hero {
+  background:
+    radial-gradient(
+      1200px 650px at 50% -12%,
+      rgba(154, 123, 255, 0.18),
+      transparent 55%
+    ),
+    radial-gradient(
+      900px 520px at 10% 12%,
+      rgba(17, 167, 239, 0.16),
+      transparent 55%
+    ),
+    radial-gradient(
+      900px 520px at 90% 20%,
+      rgba(37, 99, 235, 0.12),
+      transparent 55%
+    ),
+    var(--bg);
+}
+
+/* Add a subtle “glow” on premium actions */
+.btn-primary,
+.btn-premium,
+.cta-btn {
+  box-shadow: 0 12px 34px rgba(37, 99, 235, 0.22);
+}
+.btn-primary:hover,
+.btn-premium:hover,
+.cta-btn:hover {
+  box-shadow: 0 16px 44px rgba(37, 99, 235, 0.26);
+}
+
+.problem-card:hover,
+.solution-card:hover {
+  border-color: rgba(17, 167, 239, 0.22);
+  box-shadow: 0 18px 44px rgba(10, 16, 34, 0.14);
+}
+
+.nav-links a:hover {
+  background: rgba(17, 167, 239, 0.1);
+  border-color: rgba(17, 167, 239, 0.18);
+}
+
+.nav-links a.active {
+  background: rgba(154, 123, 255, 0.14);
+  border-color: rgba(154, 123, 255, 0.26);
+}
+
+.hero-facts li::before,
+.service-list li::before {
+  color: rgba(17, 167, 239, 0.92);
+}
+
+.testimonial-discipline {
+  color: rgba(154, 123, 255, 0.92);
+}
+
+.stars {
+  color: rgba(255, 209, 102, 0.95);
+}
+
+strong {
+  color: rgba(10, 16, 34, 0.96);
+  font-weight: 700;
+}
+.accent {
+  color: rgba(37, 99, 235, 0.96);
+  font-weight: 700;
+}
+.soft-accent {
+  color: rgba(154, 123, 255, 0.92);
+  font-weight: 700;
+}

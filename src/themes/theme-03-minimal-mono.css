@@ -1,0 +1,86 @@
+/* theme-03-minimal-mono.css */
+:root {
+  --ink: #0e1116;
+  --muted: rgba(14, 17, 22, 0.66);
+  --line: rgba(14, 17, 22, 0.12);
+  --surface: #ffffff;
+  --bg: #ffffff;
+
+  --violet: #6a5cff;
+  --violet-700: #5647f0;
+  --blue: #2b6fff;
+  --blue-700: #2159d6;
+
+  --gold: #e6d3a6;
+
+  --cta: #111827; /* charcoal CTA = decisive, executive */
+  --cta-700: #0b1220;
+
+  --focus: 0 0 0 4px rgba(106, 92, 255, 0.18);
+}
+
+/* Make spacing feel even more “gallery” */
+.section {
+  padding: 5rem 0;
+}
+.hero {
+  min-height: 84vh;
+  background:
+    radial-gradient(
+      1100px 560px at 50% -10%,
+      rgba(106, 92, 255, 0.1),
+      transparent 55%
+    ),
+    #fff;
+}
+
+.btn-primary,
+.btn-premium,
+.cta-btn {
+  box-shadow: 0 12px 30px rgba(17, 24, 39, 0.18);
+}
+
+.btn-secondary {
+  border-color: rgba(14, 17, 22, 0.14);
+}
+
+.navbar {
+  background: rgba(255, 255, 255, 0.86);
+  border-bottom: 1px solid rgba(14, 17, 22, 0.08);
+}
+
+.nav-links a:hover {
+  background: rgba(14, 17, 22, 0.05);
+  border-color: rgba(14, 17, 22, 0.12);
+}
+
+.nav-links a.active {
+  background: rgba(106, 92, 255, 0.1);
+  border-color: rgba(106, 92, 255, 0.22);
+}
+
+.hero-facts li::before,
+.service-list li::before {
+  color: rgba(106, 92, 255, 0.92);
+}
+
+.testimonial-discipline {
+  color: rgba(106, 92, 255, 0.92);
+}
+
+.stars {
+  color: rgba(230, 211, 166, 0.95);
+}
+
+strong {
+  color: rgba(14, 17, 22, 0.96);
+  font-weight: 700;
+}
+.accent {
+  color: rgba(106, 92, 255, 0.96);
+  font-weight: 700;
+}
+.soft-accent {
+  color: rgba(14, 17, 22, 0.8);
+  font-weight: 700;
+}

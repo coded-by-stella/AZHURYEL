@@ -1,0 +1,73 @@
+/* theme-01-executive-calm.css */
+:root {
+  --ink: #0b1324;
+  --muted: rgba(11, 19, 36, 0.68);
+  --line: rgba(11, 19, 36, 0.12);
+  --surface: #ffffff;
+  --bg: #f7f9fc;
+
+  --violet: #6f5ef7;
+  --violet-700: #5a4ae6;
+  --blue: #1aa6b7;
+  --blue-700: #148a98;
+
+  --gold: #e7c46a;
+
+  --cta: #0f766e; /* teal = action (calm, competence) */
+  --cta-700: #0b5e58;
+
+  --focus: 0 0 0 4px rgba(26, 166, 183, 0.22);
+}
+
+/* Hero atmosphere */
+.hero {
+  background:
+    radial-gradient(
+      1100px 560px at 50% -10%,
+      rgba(111, 94, 247, 0.14),
+      transparent 55%
+    ),
+    radial-gradient(
+      900px 520px at 12% 10%,
+      rgba(26, 166, 183, 0.14),
+      transparent 55%
+    ),
+    var(--bg);
+}
+
+.nav-links a:hover {
+  background: rgba(26, 166, 183, 0.1);
+  border-color: rgba(26, 166, 183, 0.18);
+}
+
+.nav-links a.active {
+  background: rgba(111, 94, 247, 0.14);
+  border-color: rgba(111, 94, 247, 0.28);
+}
+
+.hero-facts li::before,
+.service-list li::before {
+  color: rgba(26, 166, 183, 0.92);
+}
+
+.testimonial-discipline {
+  color: rgba(26, 166, 183, 0.92);
+}
+
+.stars {
+  color: rgba(231, 196, 106, 0.95);
+}
+
+/* Micro emphasis helpers */
+strong {
+  color: rgba(11, 19, 36, 0.94);
+  font-weight: 700;
+}
+.accent {
+  color: rgba(26, 166, 183, 0.95);
+  font-weight: 700;
+}
+.soft-accent {
+  color: rgba(111, 94, 247, 0.92);
+  font-weight: 700;
+}

@@ -1,0 +1,77 @@
+/* theme-02-spiritual-modern.css */
+:root {
+  --ink: #101427;
+  --muted: rgba(16, 20, 39, 0.68);
+  --line: rgba(16, 20, 39, 0.12);
+  --surface: #ffffff;
+  --bg: #fbfaff;
+
+  --violet: #8b6cff;
+  --violet-700: #7453f0;
+  --blue: #5b8cff;
+  --blue-700: #426fe6;
+
+  --gold: #f1d48c;
+
+  --cta: #1b9c85; /* mint-teal action = “fresh start” */
+  --cta-700: #147b69;
+
+  --focus: 0 0 0 4px rgba(139, 108, 255, 0.18);
+}
+
+.hero {
+  background:
+    radial-gradient(
+      1200px 600px at 50% -12%,
+      rgba(139, 108, 255, 0.18),
+      transparent 55%
+    ),
+    radial-gradient(
+      900px 520px at 10% 12%,
+      rgba(27, 156, 133, 0.12),
+      transparent 55%
+    ),
+    radial-gradient(
+      900px 520px at 90% 18%,
+      rgba(91, 140, 255, 0.12),
+      transparent 55%
+    ),
+    var(--bg);
+}
+
+.problem-card:hover,
+.solution-card:hover {
+  border-color: rgba(139, 108, 255, 0.22);
+  box-shadow: 0 16px 40px rgba(16, 20, 39, 0.12);
+}
+
+.nav-links a:hover {
+  background: rgba(139, 108, 255, 0.1);
+  border-color: rgba(139, 108, 255, 0.18);
+}
+
+.hero-facts li::before,
+.service-list li::before {
+  color: rgba(27, 156, 133, 0.92);
+}
+
+.testimonial-discipline {
+  color: rgba(139, 108, 255, 0.92);
+}
+
+.stars {
+  color: rgba(241, 212, 140, 0.95);
+}
+
+strong {
+  color: rgba(16, 20, 39, 0.94);
+  font-weight: 700;
+}
+.accent {
+  color: rgba(139, 108, 255, 0.96);
+  font-weight: 700;
+}
+.soft-accent {
+  color: rgba(27, 156, 133, 0.92);
+  font-weight: 700;
+}
