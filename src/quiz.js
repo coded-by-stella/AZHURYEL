@@ -1,4 +1,3 @@
-// src/quiz.js
 (function () {
   const quizForm = document.getElementById("rebalance-quiz");
   if (!quizForm) return;
@@ -29,7 +28,7 @@
     CYCLICAL: {
       title: "Your result: The Cyclical Burner",
       description:
-        "Your energy and motivation move in waves. You can enter intense focus and then crash, avoid, or feel emptied out. This often happens when your system relies on urgency to perform and collapses when urgency disappears.",
+        "Your energy and motivation move in waves. You can enter intense focus and then crash, avoid or feel emptied out. This often happens when your system relies on urgency to perform and collapses when urgency disappears.",
       nextStep:
         "Grounded next step: rebuild rhythm before pushing for more output. We start with micro-structures that stabilize your baseline so your work stops requiring burnout to happen.",
     },
@@ -70,21 +69,21 @@
 
     const res = calculateResult();
     if (!res) {
-      errorEl.style.display = "block";
-      emailGate.style.display = "none";
+      if (errorEl) errorEl.style.display = "block";
+      if (emailGate) emailGate.style.display = "none";
       return;
     }
 
-    errorEl.style.display = "none";
+    if (errorEl) errorEl.style.display = "none";
 
-    // Store result in hidden fields for Netlify submission.
     if (hiddenProfileEl) hiddenProfileEl.value = res.profile;
     if (hiddenTitleEl) hiddenTitleEl.value = res.title;
     if (hiddenDescEl) hiddenDescEl.value = res.description;
     if (hiddenNextEl) hiddenNextEl.value = res.nextStep;
 
-    // Show email gate. Do NOT reveal result on page.
-    emailGate.style.display = "block";
-    emailGate.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (emailGate) {
+      emailGate.style.display = "block";
+      emailGate.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   });
 })();

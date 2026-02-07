@@ -1,7 +1,6 @@
-// Wait for DOM
 document.addEventListener("DOMContentLoaded", () => {
-  // ===== Testimonial Carousel  =====
   const carousel = document.querySelector(".testimonial-carousel");
+
   if (carousel) {
     const slides = document.querySelectorAll(".testimonial-slide");
     const prevBtn = document.querySelector(".prev");
@@ -38,18 +37,27 @@ document.addEventListener("DOMContentLoaded", () => {
       if (autoPlay) clearInterval(autoPlay);
     };
 
-    // Controls (guarded)
-    if (prevBtn) prevBtn.addEventListener("click", () => { prevSlide(); startAutoPlay(); });
-    if (nextBtn) nextBtn.addEventListener("click", () => { nextSlide(); startAutoPlay(); });
+    if (prevBtn) {
+      prevBtn.addEventListener("click", () => {
+        prevSlide();
+        startAutoPlay();
+      });
+    }
 
-    // Pause on hover
+    if (nextBtn) {
+      nextBtn.addEventListener("click", () => {
+        nextSlide();
+        startAutoPlay();
+      });
+    }
+
     carousel.addEventListener("mouseenter", stopAutoPlay);
     carousel.addEventListener("mouseleave", startAutoPlay);
 
-    // Dots
     const buildDots = () => {
       if (!dotsContainer) return;
       dotsContainer.innerHTML = "";
+
       slides.forEach((_, i) => {
         const dot = document.createElement("span");
         dot.classList.add("dot");
@@ -70,7 +78,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     };
 
-    // Init carousel only if we have slides
     if (slides.length > 0) {
       buildDots();
       showSlide(currentSlide);
@@ -78,7 +85,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // ===== Mobile Nav =====
   const navbars = document.querySelectorAll(".navbar");
 
   navbars.forEach((navbar) => {
@@ -91,6 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const setExpanded = (el, state) => {
       el.setAttribute("aria-expanded", state ? "true" : "false");
     };
+
     setExpanded(hamburger, false);
 
     const openMenu = () => {
@@ -115,12 +122,10 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Close on link click
     navLinks.addEventListener("click", (e) => {
       if (e.target.tagName === "A") closeMenu();
     });
 
-    // Close on resize to desktop
     window.addEventListener("resize", () => {
       if (window.innerWidth > 900 && navLinks.classList.contains("active")) {
         closeMenu();
