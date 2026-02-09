@@ -1,20 +1,26 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Meta -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Holistic Guidance | Azhuryel Rebalance System</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Rebalance Quiz | Azhuryel Rebalance System</title>
     <meta
       name="description"
-      content="Holistic Guidance by Stella Marrali. Private online Holistic Leadership Coaching for entrepreneurs, CEOs, founders, managers, freelancers and self-employed people who want sustainable success without burnout. A grounded system combining leadership structure and spiritual tools."
+      content="Take the 2-minute Rebalance Quiz to identify your pressure pattern and get a clear next step inside the Azhuryel Rebalance System."
     />
 
+    <!-- Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="src/style.css" />
 
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- Favicon -->
     <link
       rel="icon"
       href="assets/images/icons/favicon/favicon.ico"
@@ -28,8 +34,8 @@
       <div class="cookie-banner-inner">
         <p class="cookie-title">Cookies</p>
         <p class="cookie-text">
-          This website uses essential cookies to make core features work. We do
-          not use analytics or advertising cookies at this time. You can read
+          This website uses essential cookies to make core features work.We do
+          not use analytics or advertising cookies at this time.You can read
           more in our Cookie Policy.
         </p>
         <div class="cookie-actions">
@@ -46,6 +52,12 @@
     <header class="navbar">
       <div class="navbar-left">
         <div class="brand-lockup">
+          <img
+            src="assets/images/icons/dark-symbol.png"
+            alt="Azhuryel symbol"
+            class="brand-mark"
+          />
+
           <a href="index.html" class="brand-name">Azhuryel</a>
           <span class="brand-payoff">
             Train your mind, elevate your soul, transform your life.
@@ -55,11 +67,7 @@
         <nav class="nav-links" aria-label="Primary">
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li>
-              <a href="holistic-guidance.html" class="active"
-                >Holistic Guidance</a
-              >
-            </li>
+            <li><a href="holistic-guidance.html">Holistic Guidance</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
@@ -74,7 +82,7 @@
     </header>
 
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero" id="quiz-hero">
       <div class="hero-content">
         <img
           src="assets/images/icons/dark.png"
@@ -82,253 +90,529 @@
           class="logo"
         />
 
-        <h1 class="hero-title">Holistic Guidance</h1>
+        <h1 class="hero-title">The 2-minute Rebalance Quiz</h1>
 
         <p class="hero-subtitle">
-          Private online support for entrepreneurs, CEOs, founders, managers,
-          freelancers and self-employed people who want sustainable success
-          without burnout.
+          Discover your pressure pattern and get a clear next step to regain
+          calm focus, energy and boundaries, without forcing yourself through
+          willpower.
         </p>
 
-        <p class="hero-note">
-          The Azhuryel Rebalance System blends practical leadership structure
-          with spiritual tools. You build real change in your calendar, your
-          boundaries and your nervous system.
+        <div
+          class="hero-badges"
+          style="
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 14px;
+          "
+        >
+          <span
+            class="pill"
+            style="
+              padding: 8px 12px;
+              border-radius: 999px;
+              border: 1px solid rgba(0, 0, 0, 0.12);
+              font-size: 13px;
+            "
+          >
+            Takes 2 minutes
+          </span>
+          <span
+            class="pill"
+            style="
+              padding: 8px 12px;
+              border-radius: 999px;
+              border: 1px solid rgba(0, 0, 0, 0.12);
+              font-size: 13px;
+            "
+          >
+            8 questions
+          </span>
+          <span
+            class="pill"
+            style="
+              padding: 8px 12px;
+              border-radius: 999px;
+              border: 1px solid rgba(0, 0, 0, 0.12);
+              font-size: 13px;
+            "
+          >
+            Personal reply
+          </span>
+        </div>
+
+        <p class="hero-note" style="margin-top: 14px">
+          This is coaching and holistic guidance, not clinical care.No medical
+          or spiritual guarantees are made.
         </p>
 
-        <a href="quiz.html" class="btn-primary">Take the 2-minute quiz</a>
+        <a href="#quiz" class="btn-primary btn-quiz">Start the quiz</a>
       </div>
     </section>
 
-    <!-- WHAT IT IS -->
+    <!-- PRE-QUIZ VALUE -->
     <section class="section">
       <div class="container">
-        <h2 class="section-title">What is Holistic Guidance?</h2>
+        <h2 class="section-title">What you will get</h2>
 
-        <p class="section-lead">
-          Holistic Guidance is a one-to-one online space where we work on two
-          things at the same time: how you lead and how your system carries
-          leadership.
-        </p>
+        <div class="problem-grid" style="margin-top: 18px">
+          <article class="problem-card" style="grid-column: span 4">
+            <h3 style="margin-bottom: 6px">Your pressure profile</h3>
+            <p style="margin: 0">
+              A clear label for what is happening in your nervous system and
+              leadership habits right now.
+            </p>
+          </article>
 
-        <p class="section-lead">
-          You will not only learn better time management and delegation. You
-          will also learn how to regulate stress in your body, release emotional
-          overload and restore energetic stability so you can lead without
-          living in permanent alert.
-        </p>
+          <article class="problem-card" style="grid-column: span 4">
+            <h3 style="margin-bottom: 6px">A next step you can do</h3>
+            <p style="margin: 0">
+              A realistic action that reduces overwhelm and creates stability,
+              without adding more tasks to your life.
+            </p>
+          </article>
 
-        <p class="section-lead">
-          Most people have tried one side only. A productivity course. A
-          meditation app. A leadership book. It helps for a while, then life
-          hits again. This system works because it combines structure and
-          spiritual regulation as one path.
+          <article class="problem-card" style="grid-column: span 4">
+            <h3 style="margin-bottom: 6px">A direction for support</h3>
+            <p style="margin: 0">
+              If it makes sense, I will tell you which path fits you best inside
+              the Azhuryel Rebalance System.
+            </p>
+          </article>
+        </div>
+
+        <p class="section-lead" style="text-align: left; margin-top: 16px">
+          This quiz is designed for high-functioning people who look fine on the
+          outside but feel the system strain inside.
         </p>
       </div>
     </section>
 
-    <!-- HOW WE WORK -->
+    <!-- QUIZ -->
+    <section class="section" id="quiz">
+      <div class="container">
+        <h2 class="section-title">Start here</h2>
+        <p class="section-lead" style="text-align: left">
+          First, share your details so I can respond with clarity.Then answer 8
+          quick questions.
+        </p>
+
+        <form
+          id="rebalance-quiz"
+          class="freebie-form"
+          name="rebalance-quiz"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          action="thank-you.html"
+          novalidate
+        >
+          <input type="hidden" name="form-name" value="rebalance-quiz" />
+          <p style="display: none">
+            <label>Don’t fill this out: <input name="bot-field" /></label>
+          </p>
+
+          <!-- Hidden fields filled by JS -->
+          <input type="hidden" id="quiz-profile-hidden" name="quiz_profile" />
+          <input type="hidden" id="quiz-title-hidden" name="quiz_title" />
+          <input type="hidden" id="quiz-desc-hidden" name="quiz_description" />
+          <input type="hidden" id="quiz-next-hidden" name="quiz_next_step" />
+
+          <!-- Error -->
+          <div
+            id="quiz-error"
+            class="problem-card"
+            style="display: none; grid-column: span 12"
+          >
+            <h3 style="margin: 0 0 6px">Please complete the quiz</h3>
+            <p style="margin: 0">
+              Check that you filled all required fields and answered every
+              question.
+            </p>
+          </div>
+
+          <!-- DETAILS -->
+          <div class="problem-grid" style="margin-top: 18px">
+            <article class="problem-card" style="grid-column: span 12">
+              <h3>Your details</h3>
+              <p style="margin: 0">
+                These details help me reply personally and understand your
+                leadership context.
+              </p>
+
+              <div style="margin-top: 14px; display: grid; gap: 12px">
+                <div
+                  style="
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 12px;
+                  "
+                >
+                  <div>
+                    <label class="hero-note" for="firstName">First name</label>
+                    <input
+                      id="firstName"
+                      name="first_name"
+                      type="text"
+                      required
+                      placeholder="First name"
+                    />
+                  </div>
+
+                  <div>
+                    <label class="hero-note" for="lastName">Last name</label>
+                    <input
+                      id="lastName"
+                      name="last_name"
+                      type="text"
+                      required
+                      placeholder="Last name"
+                    />
+                  </div>
+                </div>
+
+                <div
+                  style="
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 12px;
+                  "
+                >
+                  <div>
+                    <label class="hero-note" for="email">Email</label>
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      required
+                      placeholder="Email address"
+                    />
+                  </div>
+
+                  <div>
+                    <label class="hero-note" for="phone">Phone number</label>
+                    <input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      placeholder="+47..."
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label class="hero-note" for="role">Your role or title</label>
+                  <input
+                    id="role"
+                    name="role"
+                    type="text"
+                    required
+                    placeholder="Founder, CEO, Manager, Freelancer..."
+                  />
+                </div>
+
+                <div>
+                  <label class="hero-note" for="reason">
+                    What problem do you feel you have right now and why are you
+                    taking this test?
+                  </label>
+                  <textarea
+                    id="reason"
+                    name="reason"
+                    required
+                    rows="6"
+                    placeholder="Tell me what feels out of control and what you want to protect or rebuild."
+                  ></textarea>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- QUESTIONS -->
+          <div class="problem-grid" style="margin-top: 18px">
+            <article class="problem-card" style="grid-column: span 12">
+              <h3>1) When work is “done”, what happens?</h3>
+              <div class="quiz-options">
+                <label class="quiz-option">
+                  <input type="radio" name="q1" value="HYPER" required />
+                  My body stays tense and my mind keeps scanning.
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q1" value="HOLDER" />
+                  I keep carrying responsibility even in my private time.
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q1" value="CYCLICAL" />
+                  I crash after intense pushes and struggle to recover.
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q1" value="DISCONNECTED" />
+                  I function but I feel emotionally distant inside.
+                </label>
+              </div>
+            </article>
+
+            <article class="problem-card" style="grid-column: span 12">
+              <h3>2) How does your body feel most days?</h3>
+              <div class="quiz-options">
+                <label class="quiz-option">
+                  <input type="radio" name="q2" value="HYPER" required />
+                  Wired, alert, tense, like I cannot fully switch off.
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q2" value="HOLDER" />
+                  Heavy, responsible, like I am holding everything together.
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q2" value="CYCLICAL" />
+                  Strong bursts of drive, then exhaustion or shutdown.
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q2" value="DISCONNECTED" />
+                  Numb or flat, like I am on autopilot.
+                </label>
+              </div>
+            </article>
+
+            <article class="problem-card" style="grid-column: span 12">
+              <h3>3) What is your biggest leadership stress pattern?</h3>
+              <div class="quiz-options">
+                <label class="quiz-option">
+                  <input type="radio" name="q3" value="HYPER" required />
+                  I overthink, anticipate problems and stay in urgency.
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q3" value="HOLDER" />
+                  I take on too much and feel guilty delegating.
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q3" value="CYCLICAL" />
+                  I sprint hard then avoid, procrastinate or crash.
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q3" value="DISCONNECTED" />
+                  I do what must be done but I feel disconnected from it.
+                </label>
+              </div>
+            </article>
+
+            <article class="problem-card" style="grid-column: span 12">
+              <h3>
+                4) What happens to your personal life when business is busy?
+              </h3>
+              <div class="quiz-options">
+                <label class="quiz-option">
+                  <input type="radio" name="q4" value="HYPER" required />
+                  I am physically there but mentally still at work.
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q4" value="HOLDER" />
+                  I become the provider and forget my needs.
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q4" value="CYCLICAL" />
+                  I disappear into work, then I crash and isolate.
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q4" value="DISCONNECTED" />
+                  I keep going but joy and presence feel far away.
+                </label>
+              </div>
+            </article>
+
+            <article class="problem-card" style="grid-column: span 12">
+              <h3>5) How do you relate to rest?</h3>
+              <div class="quiz-options">
+                <label class="quiz-option">
+                  <input type="radio" name="q5" value="HYPER" required />
+                  Rest feels impossible because my system stays alert.
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q5" value="HOLDER" />
+                  Rest feels undeserved because things depend on me.
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q5" value="CYCLICAL" />
+                  Rest only happens after I crash.
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q5" value="DISCONNECTED" />
+                  Rest happens but it does not feel nourishing.
+                </label>
+              </div>
+            </article>
+
+            <article class="problem-card" style="grid-column: span 12">
+              <h3>6) What is most true about your boundaries?</h3>
+              <div class="quiz-options">
+                <label class="quiz-option">
+                  <input type="radio" name="q6" value="HYPER" required />
+                  I struggle to say no because I fear losing control.
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q6" value="HOLDER" />
+                  I say yes because I feel responsible for others.
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q6" value="CYCLICAL" />
+                  I set boundaries after I am already overwhelmed.
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q6" value="DISCONNECTED" />
+                  I have boundaries but I still feel emotionally far from life.
+                </label>
+              </div>
+            </article>
+
+            <article class="problem-card" style="grid-column: span 12">
+              <h3>7) What happens in your mind at night?</h3>
+              <div class="quiz-options">
+                <label class="quiz-option">
+                  <input type="radio" name="q7" value="HYPER" required />
+                  My mind replays, plans, scans problems and keeps me awake.
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q7" value="HOLDER" />
+                  I think about everyone’s needs and what I still must handle.
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q7" value="CYCLICAL" />
+                  I collapse from exhaustion or I cannot switch off after
+                  sprinting.
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q7" value="DISCONNECTED" />
+                  I fall asleep but wake up tired or emotionally flat.
+                </label>
+              </div>
+            </article>
+
+            <article class="problem-card" style="grid-column: span 12">
+              <h3>8) What do you want most right now?</h3>
+              <div class="quiz-options">
+                <label class="quiz-option">
+                  <input type="radio" name="q8" value="HYPER" required />
+                  Calm focus and safety in my body.
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q8" value="HOLDER" required />
+                  Relief from carrying everything alone.
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q8" value="CYCLICAL" required />
+                  A sustainable rhythm that stops the sprint and crash cycle.
+                </label>
+                <label class="quiz-option">
+                  <input type="radio" name="q8" value="DISCONNECTED" required />
+                  Presence, vitality and meaning again.
+                </label>
+              </div>
+            </article>
+          </div>
+
+          <!-- CONSENTS -->
+          <div class="problem-grid" style="margin-top: 18px">
+            <article class="problem-card" style="grid-column: span 12">
+              <h3>Consent</h3>
+
+              <div style="display: grid; gap: 10px; margin-top: 10px">
+                <label class="quiz-option" style="font-size: 14px">
+                  <input type="checkbox" name="privacy_consent" required />
+                  I have read and agree to the
+                  <a href="privacy.html" target="_blank">Privacy Policy</a>.
+                </label>
+
+                <label class="quiz-option" style="font-size: 14px">
+                  <input type="checkbox" name="marketing_consent" />
+                  Yes, I want to receive email and SMS updates, free resources
+                  and offers from Azhuryel.I can unsubscribe anytime.
+                </label>
+              </div>
+
+              <button
+                type="submit"
+                class="btn-premium"
+                style="margin-top: 14px"
+              >
+                Submit quiz
+              </button>
+
+              <p class="hero-note" style="margin-top: 10px">
+                I reply personally.If you request a call, it will be a video
+                meeting.
+              </p>
+            </article>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- WHAT HAPPENS NEXT -->
     <section class="section">
       <div class="container">
-        <h2 class="section-title">How we work together</h2>
-        <p class="section-lead" style="text-align: left">
-          The Azhuryel Rebalance System supports leaders through three pillars
-          that create stable change.
-        </p>
+        <h2 class="section-title">What happens next</h2>
 
-        <div class="problem-grid">
-          <article class="problem-card">
-            <h3>Lead with structure</h3>
-            <p>
-              We redesign your week: priorities, calendar boundaries,
-              delegation, meeting hygiene and realistic rhythms so your business
-              stops consuming your life.
+        <div class="problem-grid" style="margin-top: 18px">
+          <article class="problem-card" style="grid-column: span 4">
+            <h3 style="margin-bottom: 6px">1) You submit the quiz</h3>
+            <p style="margin: 0">
+              Your answers generate a pressure profile and a recommended next
+              step.
             </p>
           </article>
 
-          <article class="problem-card">
-            <h3>Regulate and release</h3>
-            <p>
-              We calm your nervous system and process the pressure you carry:
-              responsibility, fear of failure, people pleasing, perfectionism
-              and the “I must” loop that keeps you trapped.
+          <article class="problem-card" style="grid-column: span 4">
+            <h3 style="margin-bottom: 6px">2) I review your context</h3>
+            <p style="margin: 0">
+              I read your “reason” message so I understand what is happening
+              behind the scenes.
             </p>
           </article>
 
-          <article class="problem-card">
-            <h3>Rebalance and realign</h3>
-            <p>
-              We restore energetic flow and inner coherence so calm becomes your
-              baseline. Decisions get cleaner. Presence returns. You lead from
-              alignment, not survival.
+          <article class="problem-card" style="grid-column: span 4">
+            <h3 style="margin-bottom: 6px">3) You get a clear path</h3>
+            <p style="margin: 0">
+              If it is a fit, I point you to the right starting point inside the
+              Azhuryel Rebalance System.
             </p>
           </article>
         </div>
 
-        <p class="section-lead" style="text-align: left; margin-top: 1rem">
-          This is held in micro structures: repeatable practices that fit real
-          entrepreneur life, even when your calendar is full.
-        </p>
-
-        <a href="quiz.html" class="btn-secondary">Take the quiz</a>
-      </div>
-    </section>
-
-    <!-- WHY AZHURYEL -->
-    <section class="section" id="why-azhuryel">
-      <div class="container">
-        <h2 class="section-title">Why Azhuryel works when other paths fail</h2>
-
-        <p class="section-lead" style="text-align: left">
-          If you only do business structure, you may perform better, but your
-          body still lives in stress. You will eventually recreate the same
-          chaos with new tools.
-        </p>
-
-        <p class="section-lead" style="text-align: left">
-          If you only do spiritual practice, you may feel calmer for a moment,
-          but your calendar still overloads you. You will keep leaking energy
-          through poor boundaries, overbooking and constant availability.
-        </p>
-
-        <p class="section-lead" style="text-align: left">
-          Azhuryel combines both, because leaders need both. We build a life
-          system that protects your business and your humanity.
-        </p>
-
-        <div class="problem-grid">
-          <article class="problem-card">
-            <h3>If this is you</h3>
-            <p>
-              You have tried time management. You know what to do, but you still
-              cannot switch off. Your mind keeps scanning and your body stays
-              tense.
-            </p>
-          </article>
-
-          <article class="problem-card">
-            <h3>Or this is you</h3>
-            <p>
-              You meditate, you do yoga, you journal, but your meetings overlap,
-              your inbox rules your day and you cannot even enjoy a coffee
-              without guilt.
+        <div class="problem-grid" style="margin-top: 18px">
+          <article class="problem-card" style="grid-column: span 12">
+            <h3 style="margin-bottom: 6px">Your privacy matters</h3>
+            <p style="margin: 0">
+              I only use your information to reply and send the resources you
+              request.You can opt out anytime.No selling of data.No third-party
+              ads.
             </p>
           </article>
         </div>
 
-        <a href="contact.html" class="btn-secondary">Contact Stella</a>
-      </div>
-    </section>
+        <div class="problem-grid" style="margin-top: 18px">
+          <article class="problem-card" style="grid-column: span 12">
+            <h3 style="margin-bottom: 8px">Mini FAQ</h3>
 
-    <!-- TOOLS -->
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">Tools used in Holistic Guidance</h2>
-
-        <div class="solution-grid">
-          <article class="solution-card">
-            <h3>Leadership structure (Core)</h3>
-            <p>
-              Calendar boundaries, prioritisation, delegation, meeting design
-              and workflow clarity. You stop running your business from urgency.
+            <p style="margin: 0 0 10px">
+              <strong>Is this therapy?</strong> No.This is coaching and holistic
+              guidance.
             </p>
-          </article>
-
-          <article class="solution-card">
-            <h3>Reiki and energy alignment</h3>
-            <p>
-              To calm the system, support deep recovery and help you return to a
-              steady baseline when stress has been running the show.
+            <p style="margin: 0 0 10px">
+              <strong>Do you guarantee results?</strong> No.Results depend on
+              personal context and consistency.
             </p>
-          </article>
-
-          <article class="solution-card">
-            <h3>ThetaHealing</h3>
-            <p>
-              To transform subconscious beliefs that keep you trapped in
-              perfectionism, self doubt, fear of disappointing others and “never
-              enough”.
-            </p>
-          </article>
-
-          <article class="solution-card">
-            <h3>Chakra work</h3>
-            <p>
-              To rebalance emotional and energetic patterns so your energy
-              supports your direction, not your anxiety.
-            </p>
-          </article>
-
-          <article class="solution-card">
-            <h3>Guided meditation</h3>
-            <p>
-              To build inner space, presence and clarity so you can lead with a
-              clean mind and a regulated body.
-            </p>
-          </article>
-
-          <article class="solution-card">
-            <h3>Breathwork</h3>
-            <p>
-              To downshift stress, release stored tension and create a felt
-              sense of safety. Simple, fast and usable in a busy day.
+            <p style="margin: 0">
+              <strong>Will you spam me?</strong> No.You will only receive what
+              you consent to.
             </p>
           </article>
         </div>
-      </div>
-    </section>
 
-    <!-- WHO IT IS FOR -->
-    <section class="section" id="who-it-is-for">
-      <div class="container">
-        <h2 class="section-title">Is this the right fit?</h2>
-
-        <p class="section-lead" style="text-align: left">
-          Most clients find Azhuryel when performance is still happening but the
-          inner cost is too high. They want a calmer, structured way to lead and
-          still enjoy life.
-        </p>
-
-        <div class="problem-grid">
-          <article class="problem-card">
-            <h3>You will feel at home here if</h3>
-            <ul class="service-list">
-              <li>Your mind keeps working even when work is “done”</li>
-              <li>You overbook your week and then feel trapped by it</li>
-              <li>You carry responsibility for everyone and everything</li>
-              <li>You struggle to delegate, say no, or switch off</li>
-              <li>You want spiritual tools with real structure and clarity</li>
-              <li>You want sustainable success without burnout</li>
-            </ul>
-          </article>
-
-          <article class="problem-card">
-            <h3>This is not a match if</h3>
-            <ul class="service-list">
-              <li>You want a quick fix and no self reflection</li>
-              <li>You expect someone to “save you” or do the work for you</li>
-              <li>You want spiritual promises or guaranteed outcomes</li>
-              <li>You are looking for clinical therapy or crisis support</li>
-              <li>You only want motivation without integration into habits</li>
-            </ul>
-          </article>
+        <div style="text-align: center; margin-top: 18px">
+          <a href="#quiz" class="btn-primary btn-quiz">Take the quiz now</a>
         </div>
-
-        <a href="quiz.html" class="btn-secondary">Take the quiz</a>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="section guarantee">
-      <div class="container">
-        <h2 class="section-title">Start with the quiz</h2>
-        <p class="section-lead">
-          In 2 minutes you will identify your current pressure pattern and share
-          key details about your business and life. Then you can request a video
-          call or contact Stella directly.
-        </p>
-
-        <a href="quiz.html" class="btn-premium">Take the quiz</a>
       </div>
     </section>
 
@@ -345,11 +629,14 @@
           <a href="terms.html">Terms of Service</a>
           <a href="cookies.html">Cookie Policy</a>
           <a href="contact.html">Contact</a>
+          <li><a href="faq.html">FAQ</a></li>
         </nav>
       </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="src/script.js"></script>
+    <script src="src/quiz.js"></script>
     <script src="src/consent.js"></script>
   </body>
 </html>

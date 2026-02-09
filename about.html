@@ -12,7 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <link
       rel="icon"
       href="assets/images/icons/favicon/favicon.ico"
@@ -44,10 +44,17 @@
     <header class="navbar">
       <div class="navbar-left">
         <div class="brand-lockup">
-          <a href="index.html" class="brand-name">Azhuryel</a>
-          <span class="brand-payoff">
-            Train your mind, elevate your soul, transform your life.
-          </span>
+          <img
+            src="assets/images/icons/dark-symbol.png"
+            alt="Azhuryel symbol"
+            class="brand-mark"
+          />
+          <div class="brand-text">
+            <a href="index.html" class="brand-name">Azhuryel</a>
+            <span class="brand-payoff">
+              Train your mind, elevate your soul, transform your life.
+            </span>
+          </div>
         </div>
 
         <nav class="nav-links" aria-label="Primary">
@@ -268,24 +275,13 @@
       <p>Now it’s time to lead your business without sacrificing your life.</p>
       <p style="margin-top: 0.75rem">Start with one clear step.</p>
 
-      <div
-        style="
-          display: flex;
-          gap: 0.75rem;
-          justify-content: center;
-          flex-wrap: wrap;
-          margin-top: 1rem;
-        "
-      >
-        <a href="quiz.html" class="btn-premium">Take the quiz</a>
+      <div class="cta-actions">
+        <a href="quiz.html" class="btn-premium btn-contact">Take the quiz</a>
         <a href="contact.html" class="btn-secondary">Contact Stella</a>
       </div>
 
-      <p
-        class="section-lead"
-        style="margin-top: 1.25rem; color: var(--gold); font-weight: 500"
-      >
-        Calm is not something you find by chance. It is something you train into
+      <p class="final-line">
+        Calm is not something you find by chance.It is something you train into
         your system, one conscious step at a time.
       </p>
     </section>
