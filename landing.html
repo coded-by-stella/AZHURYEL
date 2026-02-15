@@ -1,0 +1,1188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Meta -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Azhuryel VIP Upgrade | Rebalance Challenge</title>
+    <meta
+      name="description"
+      content="Upgrade to VIP for the Azhuryel Rebalance Challenge. Get live VIP Q&A, lifetime replays, and the complete implementation package."
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg: #0b0d10;
+        --panel: rgba(255, 255, 255, 0.06);
+        --panel-2: rgba(255, 255, 255, 0.09);
+        --text: rgba(255, 255, 255, 0.92);
+        --muted: rgba(255, 255, 255, 0.72);
+        --stroke: rgba(255, 255, 255, 0.14);
+        --shadow: 0 18px 55px rgba(0, 0, 0, 0.45);
+
+        --brand-a: #ab8bf9;
+        --brand-b: #008eca;
+        --brand-c: #6fae8b;
+
+        --cta: #ffd24d;
+        --cta-text: #121316;
+
+        --radius-lg: 22px;
+        --radius-md: 16px;
+        --radius-sm: 12px;
+
+        --max: 1100px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        font-family:
+          Poppins,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Arial,
+          sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(
+            1100px 700px at 18% 12%,
+            rgba(171, 139, 249, 0.18),
+            transparent 56%
+          ),
+          radial-gradient(
+            900px 700px at 82% 28%,
+            rgba(0, 142, 202, 0.16),
+            transparent 56%
+          ),
+          radial-gradient(
+            900px 700px at 50% 92%,
+            rgba(111, 174, 139, 0.12),
+            transparent 56%
+          ),
+          var(--bg);
+        line-height: 1.55;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .container {
+        width: min(var(--max), calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      .topbar {
+        background: rgba(0, 0, 0, 0.35);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(12px);
+        position: sticky;
+        top: 0;
+        z-index: 50;
+      }
+
+      .topbar-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 12px 0;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+      }
+
+      .mark {
+        width: 38px;
+        height: 38px;
+        border-radius: 14px;
+        background: linear-gradient(
+          135deg,
+          rgba(171, 139, 249, 0.95),
+          rgba(0, 142, 202, 0.75),
+          rgba(111, 174, 139, 0.75)
+        );
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        box-shadow: 0 12px 40px rgba(171, 139, 249, 0.12);
+      }
+
+      .brand h1 {
+        margin: 0;
+        font-family: Cinzel, serif;
+        font-size: 15px;
+        letter-spacing: 0.6px;
+      }
+
+      .brand p {
+        margin: 0;
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      .btn {
+        appearance: none;
+        border: 0;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 12px 16px;
+        border-radius: 14px;
+        font-weight: 700;
+        font-size: 14px;
+        transition:
+          transform 0.15s ease,
+          filter 0.15s ease,
+          box-shadow 0.15s ease,
+          background 0.15s ease;
+        user-select: none;
+      }
+
+      .btn-cta {
+        background: var(--cta);
+        color: var(--cta-text);
+        box-shadow: 0 18px 48px rgba(255, 210, 77, 0.14);
+      }
+
+      .btn-cta:hover {
+        transform: translateY(-1px);
+        filter: brightness(1.03);
+        box-shadow: 0 24px 60px rgba(255, 210, 77, 0.18);
+      }
+
+      .btn-ghost {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        color: var(--text);
+      }
+
+      .btn-ghost:hover {
+        transform: translateY(-1px);
+        background: rgba(255, 255, 255, 0.085);
+      }
+
+      .hero {
+        padding: 44px 0 18px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        background: rgba(255, 255, 255, 0.06);
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .dot {
+        width: 9px;
+        height: 9px;
+        border-radius: 99px;
+        background: var(--brand-a);
+        box-shadow: 0 0 0 6px rgba(171, 139, 249, 0.16);
+      }
+
+      .hero h2 {
+        margin: 14px 0 10px;
+        font-family:
+          Playfair Display,
+          serif;
+        font-size: clamp(34px, 4.2vw, 56px);
+        line-height: 1.05;
+        letter-spacing: 0.2px;
+      }
+
+      .hero .sub {
+        margin: 0 0 18px;
+        max-width: 78ch;
+        color: var(--muted);
+        font-size: 16px;
+      }
+
+      .hero .tagline {
+        margin: 0 0 18px;
+        color: rgba(255, 255, 255, 0.86);
+        font-style: italic;
+      }
+
+      .strike {
+        text-decoration: line-through;
+        opacity: 0.75;
+      }
+
+      .headline-price {
+        display: inline-flex;
+        align-items: baseline;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin: 8px 0 16px;
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.88);
+      }
+
+      .headline-price strong {
+        font-size: 20px;
+      }
+
+      .cta-row {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 14px 0 10px;
+      }
+
+      .micro {
+        margin: 10px 0 0;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .panel {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow);
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 18px;
+        align-items: stretch;
+      }
+
+      .vip-box {
+        padding: 18px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .vip-box::before {
+        content: "";
+        position: absolute;
+        inset: -160px -160px auto auto;
+        width: 420px;
+        height: 420px;
+        background: radial-gradient(
+          closest-side,
+          rgba(0, 142, 202, 0.22),
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+
+      .vip-top {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        align-items: flex-start;
+      }
+
+      .vip-top h3 {
+        margin: 0;
+        font-size: 16px;
+        letter-spacing: 0.2px;
+      }
+
+      .pill {
+        font-size: 12px;
+        font-weight: 800;
+        padding: 8px 10px;
+        border-radius: 999px;
+        background: rgba(111, 174, 139, 0.92);
+        color: rgba(10, 11, 13, 0.95);
+      }
+
+      .list {
+        list-style: none;
+        margin: 14px 0 0;
+        padding: 0;
+        display: grid;
+        gap: 10px;
+      }
+
+      .li {
+        display: grid;
+        grid-template-columns: 22px 1fr;
+        gap: 10px;
+        align-items: start;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 14px;
+      }
+
+      .icon {
+        width: 22px;
+        height: 22px;
+        border-radius: 9px;
+        background: rgba(171, 139, 249, 0.18);
+        border: 1px solid rgba(171, 139, 249, 0.42);
+        display: grid;
+        place-items: center;
+        margin-top: 1px;
+      }
+
+      .icon svg {
+        width: 14px;
+        height: 14px;
+        fill: rgba(255, 255, 255, 0.92);
+      }
+
+      .divider {
+        height: 1px;
+        background: rgba(255, 255, 255, 0.12);
+        margin: 14px 0;
+      }
+
+      .section {
+        padding: 34px 0;
+      }
+
+      .section h3 {
+        margin: 0 0 12px;
+        font-family:
+          Playfair Display,
+          serif;
+        font-size: 28px;
+      }
+
+      .section p.lead {
+        margin: 0 0 18px;
+        color: var(--muted);
+        max-width: 85ch;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+
+      .card {
+        padding: 18px;
+        border-radius: var(--radius-lg);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: rgba(255, 255, 255, 0.06);
+      }
+
+      .card h4 {
+        margin: 0 0 8px;
+        font-size: 15px;
+        letter-spacing: 0.2px;
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .big-cta {
+        display: grid;
+        gap: 10px;
+        justify-items: center;
+        text-align: center;
+        padding: 22px;
+        margin-top: 14px;
+      }
+
+      .big-cta .subline {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .decline {
+        display: inline-block;
+        margin-top: 8px;
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 13px;
+        text-decoration: none;
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.22);
+        padding-bottom: 2px;
+      }
+
+      .decline:hover {
+        color: rgba(255, 255, 255, 0.9);
+        border-bottom-color: rgba(255, 255, 255, 0.4);
+      }
+
+      .why {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .why-block {
+        padding: 18px;
+        border-radius: var(--radius-lg);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: linear-gradient(
+          135deg,
+          rgba(171, 139, 249, 0.09),
+          rgba(0, 142, 202, 0.08),
+          rgba(111, 174, 139, 0.08)
+        );
+      }
+
+      .why-block h4 {
+        margin: 0 0 10px;
+        font-size: 16px;
+      }
+
+      .why-block ul {
+        margin: 0;
+        padding-left: 18px;
+        color: var(--muted);
+      }
+
+      .why-block li {
+        margin: 8px 0;
+      }
+
+      details {
+        border-radius: var(--radius-lg);
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        padding: 14px 16px;
+      }
+
+      summary {
+        cursor: pointer;
+        font-weight: 700;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      summary::-webkit-details-marker {
+        display: none;
+      }
+
+      details p {
+        margin: 10px 0 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .sticky-cta {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 10px 0;
+        background: rgba(0, 0, 0, 0.55);
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(12px);
+        transform: translateY(110%);
+        transition: transform 0.18s ease;
+        z-index: 60;
+      }
+
+      .sticky-cta.show {
+        transform: translateY(0);
+      }
+
+      .sticky-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .sticky-copy {
+        display: grid;
+        gap: 2px;
+      }
+
+      .sticky-copy strong {
+        font-size: 13px;
+      }
+
+      .sticky-copy span {
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      footer {
+        padding: 28px 0 84px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .footer-links a {
+        color: var(--muted);
+        text-decoration: none;
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.18);
+        padding-bottom: 2px;
+      }
+
+      .footer-links a:hover {
+        color: rgba(255, 255, 255, 0.9);
+        border-bottom-color: rgba(255, 255, 255, 0.35);
+      }
+
+      @media (max-width: 980px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+        .cards {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <div class="container">
+        <div class="topbar-inner">
+          <a class="brand" href="#top" aria-label="Azhuryel">
+            <div class="mark" aria-hidden="true"></div>
+            <div>
+              <h1>AZHURYEL</h1>
+              <p>Balance • Growth • Energy</p>
+            </div>
+          </a>
+
+          <a class="btn btn-cta" href="#upgrade">YES! Upgrade to VIP</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="container">
+          <div class="hero-grid">
+            <div>
+              <div class="eyebrow">
+                <span class="dot" aria-hidden="true"></span>
+                <span>Congratulations. Your free spot is saved.</span>
+              </div>
+
+              <h2>
+                One final step.<br />
+                Upgrade to VIP and actually implement.
+              </h2>
+
+              <p class="sub">
+                The main Rebalance Challenge gives you the training. VIP gives
+                you the support and the assets so you can apply it to your real
+                life and your real business without getting stuck.
+              </p>
+
+              <p class="tagline">
+                Elevate your soul, train your mind, transform your life.
+              </p>
+
+              <div class="headline-price" id="upgrade">
+                <span class="strike">VIP Upgrade €97</span>
+                <strong>Upgrade to VIP for just €47</strong>
+              </div>
+
+              <div class="cta-row">
+                <!-- TODO: replace with your checkout URL (Stripe, PayPal, ThriveCart, Payhip) -->
+                <a
+                  class="btn btn-cta"
+                  href="https://your-checkout-link.com"
+                  id="ctaTop"
+                >
+                  YES! I want VIP access for €47
+                </a>
+
+                <a class="btn btn-ghost" href="#inside">See what’s included</a>
+              </div>
+
+              <p class="micro">
+                VIP includes lifetime replays, VIP live Q&A sessions, and the
+                full implementation package.
+              </p>
+            </div>
+
+            <!-- VIP SUMMARY BOX -->
+            <aside class="panel vip-box" aria-label="VIP summary">
+              <div class="vip-top">
+                <h3>VIP Access Includes</h3>
+                <span class="pill">Best value</span>
+              </div>
+
+              <ul class="list">
+                <li class="li">
+                  <span class="icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M9.2 16.6 4.9 12.3l1.4-1.4 2.9 2.9 8-8 1.4 1.4z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    ><strong>3 VIP-only live Q&A sessions</strong><br />Ask your
+                    real questions and get real answers.</span
+                  >
+                </li>
+
+                <li class="li">
+                  <span class="icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M9.2 16.6 4.9 12.3l1.4-1.4 2.9 2.9 8-8 1.4 1.4z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    ><strong>Lifetime access to all replays</strong><br />Watch
+                    and rewatch as many times as you need.</span
+                  >
+                </li>
+
+                <li class="li">
+                  <span class="icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M9.2 16.6 4.9 12.3l1.4-1.4 2.9 2.9 8-8 1.4 1.4z"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    ><strong>Complete implementation package</strong
+                    ><br />Slides, cliff notes, and checklists so you can act
+                    immediately.</span
+                  >
+                </li>
+              </ul>
+
+              <div class="divider"></div>
+
+              <div class="big-cta">
+                <a
+                  class="btn btn-cta"
+                  href="https://your-checkout-link.com"
+                  id="ctaBox"
+                >
+                  YES! I want the VIP experience for €47
+                </a>
+                <div class="subline">
+                  Lifetime replays + implementation package + VIP Q&A sessions
+                </div>
+
+                <!-- TODO: replace with your free confirmation page -->
+                <a
+                  class="decline"
+                  href="https://your-event-confirmation-page.com"
+                  id="declineTop"
+                >
+                  I don’t want to upgrade. Take me to the confirmation page
+                </a>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHAT YOU GET INSIDE -->
+      <section class="section" id="inside">
+        <div class="container">
+          <h3>Here’s exactly what you’ll get inside VIP</h3>
+          <p class="lead">
+            This is the fast lane for entrepreneurs who want clarity and
+            traction, not inspiration they forget by next week.
+          </p>
+
+          <div class="cards">
+            <div class="card">
+              <h4>VIP Q&A you cannot get anywhere else</h4>
+              <p>
+                One live Q&A after each training day. VIP members only. Bring
+                your business bottlenecks, your emotional blocks, and your real
+                schedule constraints.
+              </p>
+            </div>
+
+            <div class="card">
+              <h4>Lifetime access to every replay</h4>
+              <p>
+                You do not need to panic-note. Rewatch at your pace, pause,
+                rewind, study, and implement when you are ready.
+              </p>
+            </div>
+
+            <div class="card">
+              <h4>The complete implementation package</h4>
+              <p>
+                PowerPoint slides, cliff notes, and step-by-step checklists for
+                each session so you can execute without guessing.
+              </p>
+            </div>
+          </div>
+
+          <div class="big-cta">
+            <a
+              class="btn btn-cta"
+              href="https://your-checkout-link.com"
+              id="ctaMid"
+            >
+              YES! Upgrade to VIP for €47
+            </a>
+            <div class="subline">
+              Lifetime replays + implementation package + VIP Q&A sessions
+            </div>
+            <a
+              class="decline"
+              href="https://your-event-confirmation-page.com"
+              id="declineMid"
+            >
+              No thanks. I don’t want a VIP experience
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHY VIP -->
+      <section class="section" id="why">
+        <div class="container">
+          <h3>Why upgrade to VIP?</h3>
+          <p class="lead">
+            In the main challenge we teach to many people at once. That means
+            your specific situation will not get personalized attention. VIP is
+            where your setup gets corrected fast and your momentum stays alive.
+          </p>
+
+          <div class="why">
+            <div class="why-block">
+              <h4>Direct access during VIP Q&A sessions</h4>
+              <ul>
+                <li>
+                  Ask your specific questions about your pressure pattern,
+                  boundaries, and decision fatigue
+                </li>
+                <li>
+                  Get feedback on your weekly rhythm, priorities, and execution
+                  plan
+                </li>
+                <li>
+                  Troubleshoot the real obstacles that stop you from
+                  implementing
+                </li>
+              </ul>
+            </div>
+
+            <div class="why-block">
+              <h4>Lifetime access to everything</h4>
+              <ul>
+                <li>Regular attendees rely on memory and rushed notes</li>
+                <li>
+                  VIP members keep recordings forever and can revisit every
+                  detail
+                </li>
+                <li>
+                  Share with your team so your business grows with one aligned
+                  operating system
+                </li>
+              </ul>
+            </div>
+
+            <div class="why-block">
+              <h4>The complete implementation package</h4>
+              <ul>
+                <li>Every slide so you never lose key frameworks</li>
+                <li>Cliff notes so you can review fast</li>
+                <li>Checklists so action becomes automatic, not emotional</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="big-cta">
+            <a
+              class="btn btn-cta"
+              href="https://your-checkout-link.com"
+              id="ctaWhy"
+            >
+              YES! I want VIP access for €47
+            </a>
+            <div class="subline">
+              One small upgrade that protects your progress
+            </div>
+            <a
+              class="decline"
+              href="https://your-event-confirmation-page.com"
+              id="declineWhy"
+            >
+              No thanks. Take me to the confirmation page
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- VALUE -->
+      <section class="section" id="value">
+        <div class="container">
+          <h3>The tiny investment of €47</h3>
+          <p class="lead">
+            Let’s be honest about value. If you paid for private support to fix
+            your habits, boundaries, and execution system, you could spend
+            hundreds or thousands. VIP is priced to be accessible but it is
+            designed to be decisive.
+          </p>
+
+          <div class="cards">
+            <div class="card">
+              <h4>Support that prevents backsliding</h4>
+              <p>
+                Most people do not fail because they lack information. They fail
+                because they lose structure and get alone with their doubts.
+              </p>
+            </div>
+            <div class="card">
+              <h4>Replays that turn training into a library</h4>
+              <p>
+                You can revisit the material whenever pressure spikes, life
+                changes, or you need a reset.
+              </p>
+            </div>
+            <div class="card">
+              <h4>Assets that cut implementation time</h4>
+              <p>
+                Slides, notes, and checklists make it easy to act without
+                waiting for motivation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHAT HAPPENS NEXT -->
+      <section class="section" id="next">
+        <div class="container">
+          <h3>Here’s what happens next</h3>
+          <p class="lead">
+            When you upgrade, you get VIP status immediately and a clear path
+            for the next steps.
+          </p>
+
+          <div class="cards">
+            <div class="card">
+              <h4>Instant confirmation</h4>
+              <p>
+                You receive an email with VIP access details and the schedule
+                for the VIP Q&A sessions.
+              </p>
+            </div>
+            <div class="card">
+              <h4>Your VIP-only session link</h4>
+              <p>
+                You get the private link for the daily VIP Q&A sessions so you
+                can join right after each training day.
+              </p>
+            </div>
+            <div class="card">
+              <h4>Download the implementation package</h4>
+              <p>
+                As soon as each session ends, you can download the slides, cliff
+                notes, and checklists.
+              </p>
+            </div>
+          </div>
+
+          <div class="big-cta">
+            <a
+              class="btn btn-cta"
+              href="https://your-checkout-link.com"
+              id="ctaNext"
+            >
+              YES! Upgrade me to VIP for €47
+            </a>
+            <div class="subline">
+              Lifetime access plus implementation support
+            </div>
+            <a
+              class="decline"
+              href="https://your-event-confirmation-page.com"
+              id="declineNext"
+            >
+              No thanks. I don’t want a VIP experience
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section" id="faq">
+        <div class="container">
+          <h3>FAQ</h3>
+          <p class="lead">Short answers that remove hesitation.</p>
+
+          <div class="why" style="gap: 10px">
+            <details>
+              <summary>
+                Is this therapy?
+                <span style="opacity: 0.7">⌄</span>
+              </summary>
+              <p>
+                No. Azhuryel is coaching and education. If you need clinical
+                support, work with a licensed professional.
+              </p>
+            </details>
+
+            <details>
+              <summary>
+                How long do I keep access?
+                <span style="opacity: 0.7">⌄</span>
+              </summary>
+              <p>
+                VIP includes lifetime access to the challenge replays and
+                materials.
+              </p>
+            </details>
+
+            <details>
+              <summary>
+                What if I cannot attend live?
+                <span style="opacity: 0.7">⌄</span>
+              </summary>
+              <p>
+                VIP is perfect for that. You can watch replays anytime and
+                implement at your own pace.
+              </p>
+            </details>
+
+            <details>
+              <summary>
+                Is the VIP Q&A private?
+                <span style="opacity: 0.7">⌄</span>
+              </summary>
+              <p>Yes. VIP Q&A is a separate room for VIP members only.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- PS -->
+      <section class="section" id="ps">
+        <div class="container">
+          <div class="why-block">
+            <h4>P.S.</h4>
+            <p style="margin: 0; color: var(--muted)">
+              The difference between people who change and people who stay stuck
+              is not intelligence or willpower. It’s support at the right time
+              and resources that make implementation easy. That’s what VIP gives
+              you.
+            </p>
+          </div>
+
+          <div style="height: 12px"></div>
+
+          <div class="why-block">
+            <h4>P.P.S.</h4>
+            <p style="margin: 0; color: var(--muted)">
+              This is not a trial. You pay once and keep access forever. If you
+              want the training to become a system you can return to, VIP makes
+              the most sense.
+            </p>
+          </div>
+
+          <div class="big-cta">
+            <a
+              class="btn btn-cta"
+              href="https://your-checkout-link.com"
+              id="ctaBottom"
+            >
+              YES! I want the VIP experience for €47
+            </a>
+            <div class="subline">
+              Lifetime replays + implementation package + VIP Q&A sessions
+            </div>
+            <a
+              class="decline"
+              href="https://your-event-confirmation-page.com"
+              id="declineBottom"
+            >
+              No thanks. Take me to the confirmation page
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            gap: 14px;
+            flex-wrap: wrap;
+          "
+        >
+          <div>
+            <strong style="color: rgba(255, 255, 255, 0.9)">AZHURYEL</strong>
+            <div style="height: 4px"></div>
+            <span>Balance • Growth • Energy</span>
+          </div>
+
+          <div class="footer-links">
+            <!-- TODO: replace with real URLs -->
+            <a
+              href="#"
+              onclick="
+                alert('Add your privacy policy URL');
+                return false;
+              "
+              >Privacy Policy</a
+            >
+            <a
+              href="#"
+              onclick="
+                alert('Add your terms URL');
+                return false;
+              "
+              >Terms</a
+            >
+            <a
+              href="#"
+              onclick="
+                alert('Add your contact URL');
+                return false;
+              "
+              >Contact</a
+            >
+          </div>
+        </div>
+
+        <div style="height: 14px"></div>
+
+        <div
+          class="panel"
+          style="padding: 16px; border-radius: var(--radius-lg)"
+        >
+          <strong
+            style="
+              display: block;
+              margin-bottom: 8px;
+              color: rgba(255, 255, 255, 0.9);
+            "
+          >
+            Disclaimer
+          </strong>
+
+          <p style="margin: 0 0 10px; color: var(--muted)">
+            GENERAL DISCLAIMER: All products and services are for educational
+            and informational purposes only. Use judgment and seek qualified
+            professional advice when needed. This is coaching and education, not
+            medical or psychological treatment.
+          </p>
+
+          <p style="margin: 0; color: var(--muted)">
+            RESULTS DISCLAIMER: Results vary based on effort, context, and
+            consistency. No outcomes are guaranteed.
+          </p>
+        </div>
+
+        <div style="height: 16px"></div>
+        <div style="color: rgba(255, 255, 255, 0.55)">
+          Copyright 2026. Azhuryel. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- STICKY CTA BAR -->
+    <div class="sticky-cta" id="stickyCta" aria-label="Sticky VIP CTA">
+      <div class="container">
+        <div class="sticky-inner">
+          <div class="sticky-copy">
+            <strong>Upgrade to VIP for €47</strong>
+            <span
+              >Lifetime replays + implementation package + VIP Q&A
+              sessions</span
+            >
+          </div>
+
+          <div style="display: flex; gap: 10px; flex-wrap: wrap">
+            <a
+              class="btn btn-cta"
+              href="https://your-checkout-link.com"
+              id="ctaSticky"
+            >
+              YES! Upgrade
+            </a>
+            <a
+              class="btn btn-ghost"
+              href="https://your-event-confirmation-page.com"
+              id="declineSticky"
+            >
+              No thanks
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Smooth scroll for internal anchors
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", (e) => {
+          const id = a.getAttribute("href");
+          if (!id || id === "#") return;
+          const target = document.querySelector(id);
+          if (!target) return;
+          e.preventDefault();
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      });
+
+      // Sticky CTA appears after user scrolls past the hero
+      const sticky = document.getElementById("stickyCta");
+      const hero = document.querySelector(".hero");
+
+      function onScroll() {
+        const heroBottom = hero.getBoundingClientRect().bottom;
+        if (heroBottom < 0) sticky.classList.add("show");
+        else sticky.classList.remove("show");
+      }
+
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+    </script>
+  </body>
+</html>
