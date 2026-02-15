@@ -1,144 +1,66 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const carousel = document.querySelector(".testimonial-carousel");
+// src/script.js
 
-  if (carousel) {
-    const slides = document.querySelectorAll(".testimonial-slide");
-    const prevBtn = document.querySelector(".prev");
-    const nextBtn = document.querySelector(".next");
-    const dotsContainer = document.querySelector(".carousel-dots");
+(function () {
+  // Year
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    let currentSlide = 0;
-    let autoPlay;
+  // Mobile nav (supports data-hamburger + data-nav)
+  const hamburger = document.querySelector("[data-hamburger]");
+  const nav = document.querySelector("[data-nav]");
 
-    const showSlide = (index) => {
-      slides.forEach((slide, i) => {
-        slide.classList.remove("active", "fade-in");
-        if (i === index) slide.classList.add("active", "fade-in");
-      });
-      updateDots();
-    };
+  if (hamburger && nav) {
+    hamburger.addEventListener("click", () => {
+      nav.classList.toggle("active");
+      nav.classList.toggle("open");
+    });
 
-    const nextSlide = () => {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    };
+    // Close menu when clicking a link
+    nav.addEventListener("click", (e) => {
+      const target = e.target;
+      if (target && target.tagName === "A") {
+        nav.classList.remove("active");
+        nav.classList.remove("open");
+      }
+    });
 
-    const prevSlide = () => {
-      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-      showSlide(currentSlide);
-    };
-
-    const startAutoPlay = () => {
-      stopAutoPlay();
-      autoPlay = setInterval(nextSlide, 8000);
-    };
-
-    const stopAutoPlay = () => {
-      if (autoPlay) clearInterval(autoPlay);
-    };
-
-    if (prevBtn) {
-      prevBtn.addEventListener("click", () => {
-        prevSlide();
-        startAutoPlay();
-      });
-    }
-
-    if (nextBtn) {
-      nextBtn.addEventListener("click", () => {
-        nextSlide();
-        startAutoPlay();
-      });
-    }
-
-    carousel.addEventListener("mouseenter", stopAutoPlay);
-    carousel.addEventListener("mouseleave", startAutoPlay);
-
-    const buildDots = () => {
-      if (!dotsContainer) return;
-      dotsContainer.innerHTML = "";
-
-      slides.forEach((_, i) => {
-        const dot = document.createElement("span");
-        dot.classList.add("dot", "carousel-dot"); // supports both CSS styles
-        dot.addEventListener("click", () => {
-          currentSlide = i;
-          showSlide(currentSlide);
-          startAutoPlay();
-        });
-        dotsContainer.appendChild(dot);
-      });
-    };
-
-    const updateDots = () => {
-      if (!dotsContainer) return;
-      const dots = dotsContainer.querySelectorAll(".dot, .carousel-dot");
-      dots.forEach((dot, i) => {
-        dot.classList.toggle("active", i === currentSlide);
-      });
-    };
-
-    if (slides.length > 0) {
-      buildDots();
-      showSlide(currentSlide);
-      startAutoPlay();
-    }
+    // Close menu on Escape
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        nav.classList.remove("active");
+        nav.classList.remove("open");
+      }
+    });
   }
 
-  const navbars = document.querySelectorAll(".navbar");
+  // Testimonials carousel (optional)
+  const carousel = document.querySelector("[data-carousel]");
+  if (carousel) {
+    const slides = carousel.querySelectorAll(".testimonial-slide");
+    const prevBtn = carousel.querySelector("[data-prev]");
+    const nextBtn = carousel.querySelector("[data-next]");
+    const dotsWrap = carousel.querySelector("[data-dots]");
+    const dots = dotsWrap
+      ? dotsWrap.querySelectorAll(".dot, .carousel-dot")
+      : [];
 
-  navbars.forEach((navbar) => {
-    const hamburger = navbar.querySelector(".hamburger");
-    const navLinks = navbar.querySelector(".nav-links");
-    const ctaBtn = navbar.querySelector(".cta-btn");
+    let index = 0;
 
-    if (!hamburger || !navLinks) return;
+    const setActive = (newIndex) => {
+      slides.forEach((s) => s.classList.remove("active", "fade-in"));
+      dots.forEach((d) => d.classList.remove("active"));
 
-    const setExpanded = (el, state) => {
-      el.setAttribute("aria-expanded", state ? "true" : "false");
+      index = (newIndex + slides.length) % slides.length;
+
+      slides[index].classList.add("active", "fade-in");
+      if (dots[index]) dots[index].classList.add("active");
     };
 
-    setExpanded(hamburger, false);
+    if (prevBtn) prevBtn.addEventListener("click", () => setActive(index - 1));
+    if (nextBtn) nextBtn.addEventListener("click", () => setActive(index + 1));
 
-    const openMenu = () => {
-      navLinks.classList.add("active");
-      navLinks.classList.add("open"); // supports my alternative CSS naming
-      setExpanded(hamburger, true);
-      document.body.style.overflow = "hidden";
-      if (ctaBtn) ctaBtn.style.visibility = "hidden";
-    };
-
-    const closeMenu = () => {
-      navLinks.classList.remove("active");
-      navLinks.classList.remove("open"); // supports my alternative CSS naming
-      setExpanded(hamburger, false);
-      document.body.style.overflow = "";
-      if (ctaBtn) ctaBtn.style.visibility = "";
-    };
-
-    hamburger.addEventListener("click", () => {
-      if (
-        navLinks.classList.contains("active") ||
-        navLinks.classList.contains("open")
-      ) {
-        closeMenu();
-      } else {
-        openMenu();
-      }
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => setActive(i));
     });
-
-    navLinks.addEventListener("click", (e) => {
-      if (e.target.tagName === "A") closeMenu();
-    });
-
-    window.addEventListener("resize", () => {
-      if (
-        window.innerWidth > 900 &&
-        (navLinks.classList.contains("active") ||
-          navLinks.classList.contains("open"))
-      ) {
-        closeMenu();
-      }
-    });
-  });
-});
+  }
+})();

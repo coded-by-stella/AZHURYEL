@@ -1,46 +1,35 @@
+// src/consent.js
+
 (function () {
-  const KEY = "azhuryel_cookie_consent_v1";
-
-  function readConsent() {
-    try {
-      return localStorage.getItem(KEY);
-    } catch {
-      return null;
-    }
-  }
-
-  function writeConsent(value) {
-    try {
-      localStorage.setItem(KEY, value);
-    } catch {
-      /* ignore */
-    }
-  }
-
-  const banner = document.getElementById("cookie-banner");
+  const banner = document.getElementById("cookieBanner");
   if (!banner) return;
 
-  const essentialBtn = document.getElementById("cookie-essential");
-  const acceptBtn = document.getElementById("cookie-accept");
+  const KEY = "azh_cookie_pref"; // "accept" | "reject"
 
-  const consent = readConsent();
-
-  if (!consent) {
-    banner.style.display = "block";
-  } else {
+  const existing = localStorage.getItem(KEY);
+  if (existing === "accept" || existing === "reject") {
     banner.style.display = "none";
+    return;
   }
 
-  function close(choice) {
-    writeConsent(choice);
+  const acceptBtn = banner.querySelector("[data-cookie-accept]");
+  const rejectBtn = banner.querySelector("[data-cookie-reject]");
+
+  const hide = () => {
     banner.style.display = "none";
-  }
-
-  if (essentialBtn) {
-    essentialBtn.addEventListener("click", () => close("essential"));
-  }
+  };
 
   if (acceptBtn) {
-    acceptBtn.addEventListener("click", () => close("accepted"));
+    acceptBtn.addEventListener("click", () => {
+      localStorage.setItem(KEY, "accept");
+      hide();
+    });
+  }
+
+  if (rejectBtn) {
+    rejectBtn.addEventListener("click", () => {
+      localStorage.setItem(KEY, "reject");
+      hide();
+    });
   }
 })();
